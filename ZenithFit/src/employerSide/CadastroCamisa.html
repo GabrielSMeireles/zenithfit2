@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cadastro/Edição de Camisa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b8cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full">
+<aside class="flex h-screen flex-col border-r border-slate-900 bg-black w-64 p-4 sticky top-0">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-3">
+<span class="material-symbols-outlined text-primary text-3xl">storefront</span>
+<h2 class="text-lg font-bold text-white">Admin Panel</h2>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:bg-slate-800 hover:text-slate-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="text-sm font-medium leading-normal">Análise de Vendas</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:bg-slate-800 hover:text-slate-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium leading-normal">Clientes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:bg-slate-800 hover:text-slate-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<p class="text-sm font-medium leading-normal">Pedidos</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined">checkroom</span>
+<p class="text-sm font-medium leading-normal">Produtos</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:bg-slate-800 hover:text-slate-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<p class="text-sm font-medium leading-normal">Trocas</p>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<div class="border-t border-slate-800 my-2"></div>
+<div class="flex items-center gap-3 px-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar with an abstract gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2dnqMzW5-Ydsm5ixtz1m4wex-fIHIi3JxdANcXUj5GliJkPDiMNb-xdayhzz_iW7XmAQ8L1vwkUUqRMZ_da61gv0-qoV8l963iu0_BQDUb1goPCz6raXTBf6dWhCvxPGZuep8k2LdhaMBPOdD2j_WwZQa72aPmHyztW9Ngh_qTnHhvLK2GnUrDmp8AZ-0xEkpfkMXSZnpTBCxW5qyURkqkf92AzEWvl0kIrHLP-7W0ju94JhZfKTF7_d4qEQqY-TpcAwhgrXwsfCZ");'></div>
+<div class="flex flex-col">
+<h2 class="text-slate-200 text-sm font-medium leading-normal">Admin User</h2>
+<p class="text-slate-400 text-xs font-normal leading-normal">admin@user.com</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<div class="mx-auto max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-4">
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal" href="#">Home</a>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">/</span>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal" href="#">Produtos</a>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">/</span>
+<span class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal">Cadastrar Camisa</span>
+</div>
+<div class="flex flex-wrap justify-between items-center gap-3 mb-8">
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">Cadastrar Camisa</p>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal">Preencha os campos abaixo para adicionar uma nova camisa.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex flex-col rounded-xl shadow-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight px-6 pt-5 pb-4 border-b border-slate-200 dark:border-slate-800">Informações Básicas</h2>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="description">Descrição</label>
+<textarea class="w-full rounded-md border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:border-primary focus:ring-primary" id="description" placeholder="Descreva o produto..." rows="3"></textarea>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="pricing-group">Grupo de precificação</label>
+<select class="w-full rounded-md border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:border-primary focus:ring-primary" id="pricing-group">
+<option>Selecione o grupo</option>
+<option>Grupo 1</option>
+<option>Grupo 2</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="category">Categoria</label>
+<select class="w-full rounded-md border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:border-primary focus:ring-primary" id="category" required="">
+<option disabled="" selected="" value="">Selecione a categoria</option>
+<option>Casual</option>
+<option>Esportiva</option>
+<option>Social</option>
+</select>
+</div>
+</div>
+</div>
+<div class="flex flex-col rounded-xl shadow-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight px-6 pt-5 pb-4 border-b border-slate-200 dark:border-slate-800">Especificações</h2>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="fabric">Tecido</label>
+<input class="w-full rounded-md border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:border-primary focus:ring-primary" id="fabric" placeholder="Ex: 100% Algodão" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="colors">Cores disponíveis</label>
+<select class="w-full rounded-md border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:border-primary focus:ring-primary" id="colors" multiple="">
+<option>Branco</option>
+<option>Preto</option>
+<option>Azul</option>
+<option>Vermelho</option>
+</select>
+</div>
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="sizes">Tamanhos disponíveis</label>
+<select class="w-full rounded-md border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:border-primary focus:ring-primary" id="sizes" multiple="">
+<option>PP</option>
+<option>P</option>
+<option>M</option>
+<option>G</option>
+<option>GG</option>
+</select>
+</div>
+</div>
+</div>
+<div class="flex flex-col rounded-xl shadow-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight px-6 pt-5 pb-4 border-b border-slate-200 dark:border-slate-800">Identificação e Controle</h2>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="sku">SKU</label>
+<input class="w-full rounded-md border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 focus:ring-0 cursor-not-allowed" id="sku" readonly="" type="text" value="CM-AZ-M-001"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="barcode">Código de barras</label>
+<input class="w-full rounded-md border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 focus:border-primary focus:ring-primary" id="barcode" placeholder="Insira o código de barras" type="text"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col rounded-xl shadow-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight px-6 pt-5 pb-4 border-b border-slate-200 dark:border-slate-800">Imagens do Produto</h2>
+<div class="p-6">
+<div class="flex items-center justify-center w-full">
+<label class="flex flex-col items-center justify-center w-full h-64 border-2 border-slate-300 dark:border-slate-700 border-dashed rounded-lg cursor-pointer bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800" for="dropzone-file">
+<div class="flex flex-col items-center justify-center pt-5 pb-6">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-5xl">cloud_upload</span>
+<p class="mb-2 text-sm text-slate-500 dark:text-slate-400"><span class="font-semibold">Clique para enviar</span> ou arraste e solte</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">PNG, JPG ou GIF (MAX. 800x400px)</p>
+</div>
+<input class="hidden" id="dropzone-file" type="file"/>
+</label>
+</div>
+<div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+<div class="relative group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg" data-alt="Blue t-shirt front view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfOwjamos5bgtJrVWTQL7tQV-qq_384Ukncxtd6uSXeSnARrjRd2G9G2559_JnqMbMfz5Q7crlX6-s9DNFO2bbJDPa95GwBnh_8OpIqF4O9BexxO0O1UxYPQf7AaxNqgtDlPJ1udpeI_mcqWCOCGtpcUAlj8XTG_62qJEmzth3l7gtKsDswiyxEFYZJRXj6pqo8-S5UEVEJZcW_G5h1iG_Sonh3F_fKm7hp_s9wmoYZeONPziB13I6I4-byOJHN_tqYnpMSM4ofEGv");'></div>
+<button class="absolute top-1 right-1 bg-red-500 text-white rounded-full size-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="relative group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg" data-alt="Blue t-shirt back view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKxg1bxsMX8ry_7e8jxMQ-cNLMjUL8PPiC7ZKnlQBAohaUrtRZAklMAMhUH0dIjlX-RASfL4g4oeT-zRjWboNv3xnW3Q0dHTHEqZw3iOZ9t0OVHywGLULsNq8HlFBkHrhdPbZO0H1UI-0TxV7wYTaqbv2Xci1x6ICqbC5VU4GppA3lqOuOsKpEZ4esqD0QG8zJ73ZBHw0KW8PiDQ0uk4U0ykUphEWod95NmR89ah7elBIaGfUifcn4jPAIv8wakNiJ-PKNHd3ghK7D");'></div>
+<button class="absolute top-1 right-1 bg-red-500 text-white rounded-full size-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-4 mt-2">
+    <a href="DashboardCamisa.html">
+<button class="px-6 py-2.5 rounded-md text-sm font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700">Cancelar</button>
+    </a>
+    <a href="CadastroSalvo.html">
+<button class="px-6 py-2.5 rounded-md text-sm font-semibold text-white bg-primary hover:bg-primary/90">Salvar</button>
+    </a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

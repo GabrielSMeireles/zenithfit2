@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pop-up: Alteração de Dados Pessoais (Compacto)</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                primary: "#1A1A1A",
+                "background-light": "#F8F8F8",
+                "background-dark": "#0D0D0D",
+              },
+              fontFamily: {
+                display: ["Inter", "sans-serif"],
+              },
+              borderRadius: {
+                DEFAULT: "0.5rem",
+              },
+            },
+          },
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display flex items-center justify-center min-h-screen p-4">
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+        <div class="bg-background-light dark:bg-background-dark rounded-lg shadow-2xl w-full max-w-2xl p-6 sm:p-8">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-xl sm:text-2xl font-semibold text-primary dark:text-gray-100">Alteração de Dados Pessoais</h2>
+                <a href="dashboardCliente.html" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </a>
+            </div>
+            <form action="#" method="POST">
+                <div class="space-y-4 max-h-[65vh] overflow-y-auto pr-4 -mr-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="full-name">Nome Completo</label>
+                        <input class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="full-name" name="full-name" type="text"
+                        value="João da Silva" />
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="birth-date">Data de Nascimento</label>
+                            <input class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="birth-date" name="birth-date" type="date"
+                            value="1990-01-01" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="cpf">CPF</label>
+                            <input class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="cpf" name="cpf" placeholder="000.000.000-00"
+                            type="text" value="123.456.789-00" />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="gender">Gênero</label>
+                        <select class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="gender" name="gender">
+                            <option>Feminino</option>
+                            <option selected="">Masculino</option>
+                            <option>Não informar</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+                    <fieldset>
+                        <legend class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Telefone</legend>
+                        <div class="grid grid-cols-1 sm:grid-cols-12 gap-x-4 gap-y-4">
+                            <div class="sm:col-span-4">
+                                <label class="sr-only" for="phone-type">Tipo</label>
+                                <select class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200" id="phone-type" name="phone-type">
+                                    <option>Celular</option>
+                                    <option>Residencial</option>
+                                    <option>Comercial</option>
+                                </select>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="sr-only" for="ddd">DDD</label>
+                                <input class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 text-center" id="ddd" name="ddd" placeholder="DDD"
+                                type="text" value="11" />
+                            </div>
+                            <div class="sm:col-span-6">
+                                <label class="sr-only" for="phone-number">Número</label>
+                                <input class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="phone-number" name="phone-number" placeholder="00000-0000"
+                                type="tel" value="99999-9999" />
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Endereço Residencial</legend>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="zip-code">CEP</label>
+                                <input class="w-full sm:w-1/2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="zip-code" name="zip-code"
+                                placeholder="00000-000" type="text" value="01234-567" />
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-x-4 gap-y-4">
+                                <div class="sm:col-span-9">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="street">Rua</label>
+                                    <input class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="street" name="street" type="text" value="Rua das Flores"
+                                    />
+                                </div>
+                                <div class="sm:col-span-3">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="number">Número</label>
+                                    <input class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="number" name="number" type="text" value="123"
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="neighborhood">Bairro</label>
+                                <input class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="neighborhood" name="neighborhood" type="text"
+                                value="Centro" />
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-x-4 gap-y-4">
+                                <div class="sm:col-span-8">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="city">Cidade</label>
+                                    <input class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="city" name="city" type="text" value="São Paulo"
+                                    />
+                                </div>
+                                <div class="sm:col-span-4">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="state">Estado</label>
+                                    <input class="w-full bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" id="state" name="state" type="text" value="SP"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700 space-y-4">
+                    <div class="flex flex-col sm:flex-row-reverse gap-4">
+                        <a href="dashboardCliente.html" class="w-full sm:w-auto inline-flex justify-center rounded-md border border-transparent shadow-sm px-6 py-3 bg-primary text-base font-medium text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark transition-colors">
+                            Salvar
+                        </a>
+                        <a href="dashboardCliente.html" class="w-full sm:w-auto inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-6 py-3 bg-white dark:bg-gray-800 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark transition-colors">
+                            Cancelar
+                        </a>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                        <a href="popUpAlterarSenha.html" class="w-full inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-6 py-3 bg-white dark:bg-gray-800 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark transition-colors">
+                            Alterar Senha
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div aria-hidden="true" class="w-full max-w-6xl mx-auto opacity-10 blur-sm pointer-events-none">
+        <img alt="E-commerce homepage background showing various t-shirt products and brand logos." class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6CCXEGqOaLIOQxHVTmJo9_M6svgW0-2YHb04t8VhUjaHHV4f_K9IZKIqTLQUEOjwStG-6480cJdcE0uRQo-BXGUaqSsdn-gwtZgwZC2BqzteJCYopwrgMRgfVfrv9yryKqsZyBiwa7YYP-7vtDVMKj6FwLcJkIOE9uD6m527G_BlcCo3FV7WsWjo0qIRQUn9oxvX-3CdoL16P_A7nSOBbFfods1yAqnlRCKyPszJivTNsTK1iV4m3WbmIdFDBROU6Jk8_327bQg"
+        />
+    </div>
+
+</body>
+
+</html>

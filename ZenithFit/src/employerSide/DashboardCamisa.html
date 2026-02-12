@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestão de Camisas Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2b8cee",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full">
+<aside class="flex h-screen w-64 flex-col bg-black p-4 text-white sticky top-0">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 mb-4">
+<h2 class="text-lg font-bold text-white">Admin Panel</h2>
+</div>
+<div class="flex flex-col gap-2">
+
+<a href="AnaliseVendas.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10 transition-colors">
+  <span class="material-symbols-outlined">bar_chart</span>
+  <p class="text-sm font-medium leading-none">Análise de Vendas</p>
+</a>
+
+<a href="GestaoClientes.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium leading-normal">Clientes</p>
+</a>
+
+<a href= "GestaoPedidos.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<p class="text-sm font-medium leading-normal">Pedidos</p>
+</a>
+
+<a href="DashboardCamisa.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<p class="text-sm font-medium leading-normal">Produtos</p>
+</a>
+
+<a href="GestaoTrocas.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">sync_alt</span>
+<p class="text-sm font-medium leading-normal">Trocas</p>
+</a>
+</div>
+</div>
+<div class="mt-auto flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Admin user avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCG9PQkLs7xZxar0BFvgn48hzyUnrVGEnDJsmZ4dZAn5_J4stL89W6s8UuOCle9r1HZdpwz30fCXlCb4xdbfjANIkUD_02AjUza0_vuR5iKR3ZAwdlfcNABDflrVFcYI5vmKNEGt65YoW0uJGOa_WDvf9KZI_ZyCT7XcMG7JwfxhLgPrFceyARJgtwuwl8X5Jv5_e-jh3Wic0WtY8MnRKghZBlkOzDd2VDyXNm_OoHU9helSX1C9wUD9CJ4fFtmtu2m4J3BrZ6Rb-8L");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-100 text-base font-medium leading-normal">Admin User</h1>
+<p class="text-slate-400 text-sm font-normal leading-normal">admin@example.com</p>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<div class="mx-auto max-w-7xl">
+<header class="flex flex-wrap items-center justify-between gap-4">
+<p class="text-background-dark dark:text-background-light text-4xl font-black leading-tight tracking-[-0.033em]">Gestão de Camisas</p>
+<div class="flex flex-wrap items-center gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+<span class="material-symbols-outlined">add</span>
+<a href="CadastroCamisa.html">
+  <span class="truncate">Cadastrar Camisa</span>
+</a>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-slate-700 text-background-dark dark:text-background-light border border-slate-300 dark:border-slate-600 gap-2 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-slate-200 dark:hover:bg-slate-600">
+<span class="material-symbols-outlined">inventory</span>
+
+<a href="LancamentoEstoque.html">
+  <span class="truncate">Lançamento de Entrada no Estoque</span>
+</a>
+
+</button>
+</div>
+</header>
+<div class="mt-6 bg-white dark:bg-[#1A2530] p-6 rounded-xl shadow-sm">
+<div class="flex flex-col gap-4">
+<label class="flex flex-col w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-12">
+<div class="text-slate-500 dark:text-slate-400 flex border-none bg-background-light dark:bg-background-dark items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-background-dark dark:text-background-light focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark h-full placeholder:text-slate-500 dark:placeholder:text-slate-400 px-4 pl-2 text-base font-normal leading-normal" placeholder="Pesquisar por SKU..." value=""/>
+</div>
+</label>
+<div class="flex flex-wrap gap-2">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-light dark:bg-background-dark pl-3 pr-2 text-background-dark dark:text-background-light hover:bg-slate-200 dark:hover:bg-slate-700">
+<p class="text-sm font-medium leading-normal">Tamanho</p>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-light dark:bg-background-dark pl-3 pr-2 text-background-dark dark:text-background-light hover:bg-slate-200 dark:hover:bg-slate-700">
+<p class="text-sm font-medium leading-normal">Cor</p>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-light dark:bg-background-dark pl-3 pr-2 text-background-dark dark:text-background-light hover:bg-slate-200 dark:hover:bg-slate-700">
+<p class="text-sm font-medium leading-normal">Categoria</p>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-light dark:bg-background-dark pl-3 pr-2 text-background-dark dark:text-background-light hover:bg-slate-200 dark:hover:bg-slate-700">
+<p class="text-sm font-medium leading-normal">Tecido</p>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-light dark:bg-background-dark pl-3 pr-2 text-background-dark dark:text-background-light hover:bg-slate-200 dark:hover:bg-slate-700">
+<p class="text-sm font-medium leading-normal">SKU</p>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-background-light dark:bg-background-dark pl-3 pr-2 text-background-dark dark:text-background-light hover:bg-slate-200 dark:hover:bg-slate-700">
+<p class="text-sm font-medium leading-normal">Status</p>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+</div>
+</div>
+<div class="mt-6 overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-slate-200 dark:border-slate-700">
+<tr class="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400">
+<th class="py-3 px-4">Imagem</th>
+<th class="py-3 px-4">SKU</th>
+<th class="py-3 px-4">Tecido</th>
+<th class="py-3 px-4">Cores Disponíveis</th>
+<th class="py-3 px-4">Tamanhos Disponíveis</th>
+<th class="py-3 px-4">Status</th>
+<th class="py-3 px-4 text-right">Ações</th>
+</tr>
+</thead>
+<tbody class="text-background-dark dark:text-background-light">
+<tr class="border-b border-slate-200 dark:border-slate-800">
+<td class="p-4"><img class="size-10 rounded-lg object-cover" data-alt="White T-shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC8UdT9bB7HpufZUV198xCgeuN2NhkdenO2yH2QzY24dVaBfHFYQuLqsqB_5Bxw2qzOmT5dsoBVs77pz-HtqMtDtGtmqoIFOGwDpTAdqZtNAonm6m4SxpBPUjeDslrAkcMu37j5QoU3U9bYXpll8IRJMl_MHkti0y9IwUYGU2GKMGRUpqzXfgoaox5VshqASIQTi4efl4Cb3Q5Uzy6u54Xavbuu6GpjAUjip4emyBhW0Y1jvB4yQUFdMasTxOevOfX9gr7xCR-YtjD"/></td>
+<td class="p-4 font-mono text-sm">TS-WHT-001</td>
+<td class="p-4 text-sm">Algodão Pima</td>
+<td class="p-4"><div class="flex items-center gap-1"><div class="size-4 rounded-full bg-black border border-slate-300"></div><div class="size-4 rounded-full bg-white border border-slate-300"></div><div class="size-4 rounded-full bg-blue-600 border border-slate-300"></div></div></td>
+<td class="p-4 text-sm">P, M, G, GG</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300">Ativo</span></td>
+<td class="p-4 text-right"><div class="flex justify-end gap-2"><button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md"><span class="material-symbols-outlined">edit</span></button><button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md"><span class="material-symbols-outlined">toggle_off</span></button></div></td>
+</tr>
+<tr class="border-b border-slate-200 dark:border-slate-800">
+<td class="p-4"><img class="size-10 rounded-lg object-cover" data-alt="Black T-shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABudE82CiN3shWtCl96irTnnnrOfCfLgjrRR1HUpNybpwPbpmconaWCIOPWJ2nyswpCFIqo691icg5LyHqiq5AdWtbSTIJ8A3YjOs9MW1WMKdUsqIji_iIFhJTH0vvYS7bndb8aGbonvE3GZQmrfvC1-nyX8Ew576fJN9WuzkgBw39qdAJyYrIarjH4GK0UdeVwwiZcwQBxHZ5gRfqkNKL2HJwtrR_VPP0XnjQcpzb9Eb8tLI6D8QJFqz0dS2Tx3vW2-_n8LgKyGTf"/></td>
+<td class="p-4 font-mono text-sm">TS-BLK-002</td>
+<td class="p-4 text-sm">Modal</td>
+<td class="p-4"><div class="flex items-center gap-1"><div class="size-4 rounded-full bg-black border border-slate-300"></div><div class="size-4 rounded-full bg-gray-500 border border-slate-300"></div></div></td>
+<td class="p-4 text-sm">P, M, G</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300">Ativo</span></td>
+<td class="p-4 text-right"><div class="flex justify-end gap-2"><button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md"><span class="material-symbols-outlined">edit</span></button><button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md"><span class="material-symbols-outlined">toggle_off</span></button></div></td>
+</tr>
+<tr class="border-b border-slate-200 dark:border-slate-800">
+<td class="p-4"><img class="size-10 rounded-lg object-cover" data-alt="Blue Polo shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn23-tBCc1rPb6Q44MLCbvZ8TzvUN7haMT1srmAYjF2iaCuMZDq-ccKIwMYjlaTf9DVo-V2fyddrkd5CY9UMVa1VaCF82WeVhiHs4W1lU3mh25oKhSNdPnnWrbEjyXNCOF9fVfMHcrJL7JlnDN3cVOeNRSwLr9s8Nv3VSBxexmwZAewVekKpYd_mQdfn21OBF2HylP8wH8FWYSIJNSrfCSw8y6u_q9ImSzoBQ7kzEM2llW5U0mJlBbE5uQSThAiLaDkPQCdDT3wk_I"/></td>
+<td class="p-4 font-mono text-sm">PO-BLU-003</td>
+<td class="p-4 text-sm">Piquet</td>
+<td class="p-4"><div class="flex items-center gap-1"><div class="size-4 rounded-full bg-blue-800 border border-slate-300"></div><div class="size-4 rounded-full bg-red-600 border border-slate-300"></div><div class="size-4 rounded-full bg-white border border-slate-300"></div></div></td>
+<td class="p-4 text-sm">P, M, G, GG, XG</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-slate-200 dark:bg-slate-700 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">Inativo</span></td>
+<td class="p-4 text-right"><div class="flex justify-end gap-2"><button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md"><span class="material-symbols-outlined">edit</span></button><button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md"><span class="material-symbols-outlined">toggle_on</span></button></div></td>
+</tr>
+<tr class="border-b border-slate-200 dark:border-slate-800">
+<td class="p-4"><img class="size-10 rounded-lg object-cover" data-alt="Gray long-sleeve shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf1H5ANB5mdraTo0pk51e5oyNh9ARq4AXm4SPrs3JceHfbEphgj0oviyNSpUgBGOKlbCo9J8a0VDtSSLj93zaTyxB2NolBIlXcUYXFepvEny4kFshpfJaCtImhXpsKaKwg_F8JP5hIe4EfmsT4Y5gm9aw8uXpv9gG3ZDtKzBxKGgMZJwpLRWixtcEzX1uYl-UD47i9bBZvhjvXUm8auolSIsUfmyyH26IiHZne6Ir3c2EMmxNzZ-_ZtFWRLeiZq1417mTWxlSpxIHN"/></td>
+<td class="p-4 font-mono text-sm">LS-GRY-004</td>
+<td class="p-4 text-sm">Viscose</td>
+<td class="p-4"><div class="flex items-center gap-1"><div class="size-4 rounded-full bg-gray-400 border border-slate-300"></div><div class="size-4 rounded-full bg-gray-800 border border-slate-300"></div></div></td>
+<td class="p-4 text-sm">P, M, G</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300">Ativo</span></td>
+<td class="p-4 text-right"><div class="flex justify-end gap-2"><button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md"><span class="material-symbols-outlined">edit</span></button><button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md"><span class="material-symbols-outlined">toggle_off</span></button></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between pt-4 mt-4 border-t border-slate-200 dark:border-slate-700">
+<span class="text-sm text-slate-600 dark:text-slate-400">Mostrando 1-4 de 256 itens</span>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center h-8 px-3 rounded-lg text-sm font-medium bg-background-light dark:bg-background-dark text-background-dark dark:text-background-light hover:bg-slate-200 dark:hover:bg-slate-700">Anterior</button>
+<button class="flex items-center justify-center h-8 px-3 rounded-lg text-sm font-medium bg-background-light dark:bg-background-dark text-background-dark dark:text-background-light hover:bg-slate-200 dark:hover:bg-slate-700">Próximo</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
