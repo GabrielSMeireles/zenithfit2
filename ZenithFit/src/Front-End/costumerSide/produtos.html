@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Zenith Fit - Busca de Produtos</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  primary: "#111827",
+                  "background-light": "#ffffff",
+                  "sidebar-light": "#f3f4f6",
+                },
+                fontFamily: {
+                  display: ["Inter", "sans-serif"],
+                },
+                borderRadius: {
+                  DEFAULT: "4px",
+                },
+              },
+            },
+          };
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+          .product-card-img { aspect-ratio: 1 / 1.1; }
+          .hide-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+
+<body class="bg-background-light text-slate-900 transition-colors duration-200">
+    <header class="border-b border-slate-200 bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-8">
+            <div class="flex items-center gap-10 flex-1">
+                <a href="homepage.html" class="font-black text-2xl tracking-tighter hover:opacity-80 transition-opacity">
+                    <img alt="Zenith Logo" class="h-14" src="images/logo-zenith.png" />
+                </a>
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a class="flex items-center gap-1 hover:text-primary/70 transition-colors" href="produtos.html">Shop <span class="material-symbols-outlined text-[16px]">expand_more</span></a>
+                    <a class="hover:text-primary/70 transition-colors" href="#">Promoções</a>
+                    <a class="hover:text-primary/70 transition-colors" href="#">Novidades</a>
+                    <a class="hover:text-primary/70 transition-colors" href="#">Marcas</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="dashboardCliente.html" class="p-2 hover:bg-slate-100 rounded-full">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </a>
+                <a href="carrinho.html" class="p-2 hover:bg-slate-100 rounded-full">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <aside class="col-span-1">
+            <div class="bg-sidebar-light p-6 rounded-lg">
+                <h2 class="font-bold text-lg mb-6">Filtros</h2>
+                <div class="mb-8">
+                    <h3 class="font-semibold text-sm mb-4">Tamanho</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="w-10 h-10 border border-slate-300 rounded flex items-center justify-center text-xs font-bold hover:bg-primary hover:text-white transition-colors">P</button>
+                        <button class="w-10 h-10 border border-slate-300 rounded flex items-center justify-center text-xs font-bold hover:bg-primary hover:text-white transition-colors">M</button>
+                        <button class="w-10 h-10 bg-primary text-white border border-primary rounded flex items-center justify-center text-xs font-bold">G</button>
+                        <button class="w-10 h-10 border border-slate-300 rounded flex items-center justify-center text-xs font-bold hover:bg-primary hover:text-white transition-colors">GG</button>
+                        <button class="w-10 h-10 border border-slate-300 rounded flex items-center justify-center text-xs font-bold hover:bg-primary hover:text-white transition-colors">XG</button>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h3 class="font-semibold text-sm mb-4">Cor</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="w-6 h-6 rounded-full bg-black ring-offset-2 ring-1 ring-black"></button>
+                        <button class="w-6 h-6 rounded-full bg-white border border-slate-200"></button>
+                        <button class="w-6 h-6 rounded-full bg-red-600"></button>
+                        <button class="w-6 h-6 rounded-full bg-blue-600"></button>
+                        <button class="w-6 h-6 rounded-full bg-green-600"></button>
+                        <button class="w-6 h-6 rounded-full bg-yellow-400"></button>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <h3 class="font-semibold text-sm mb-4">Marca</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="w-4 h-4 text-primary focus:ring-primary border-slate-300" name="brand" type="radio" />
+                            <span class="text-sm text-slate-600 group-hover:text-primary transition-colors">Zenith Originals</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="w-4 h-4 text-primary focus:ring-primary border-slate-300" name="brand" type="radio" />
+                            <span class="text-sm text-slate-600 group-hover:text-primary transition-colors">Growth</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input class="w-4 h-4 text-primary focus:ring-primary border-slate-300" name="brand" type="radio" />
+                            <span class="text-sm text-slate-600 group-hover:text-primary transition-colors">Berzerk</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="space-y-4 mb-8">
+                    <div>
+                        <h3 class="font-semibold text-sm mb-2">Tecido</h3>
+                        <select class="w-full bg-white border-slate-300 rounded text-sm p-2 focus:ring-primary">
+                            <option>Algodão</option>
+                            <option>Poliéster</option>
+                            <option>Dry Fit</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-sm mb-2">Categoria</h3>
+                        <select class="w-full bg-white border-slate-300 rounded text-sm p-2 focus:ring-primary">
+                            <option>Casual</option>
+                            <option>Academia</option>
+                            <option>Oversized</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="w-full bg-primary text-white py-3 rounded font-bold text-sm hover:opacity-90 transition-opacity">
+                    Aplicar Filtros
+                </button>
+            </div>
+        </aside>
+        <section class="col-span-1 md:col-span-3">
+            <div class="relative mb-8">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                <input class="w-full bg-transparent border-slate-200 rounded py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary" placeholder="Buscar por produtos..." type="text" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6">
+                <a href="detalhesProduto.html" class="group block">
+                    <div class="product-card-img bg-[#c9d6e1] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img alt="Camisa oversized Kokushibo" class="w-full h-full object-contain mix-blend-multiply opacity-90" src="images/kokushibo.png"
+                        />
+                    </div>
+                    <h3 class="font-medium text-slate-900">Camisa oversized Kokushibo</h3>
+                    <p class="font-bold text-lg mt-2">R$129,99</p>
+                </a>
+                <a href="detalhesProduto.html" class="group block">
+                    <div class="product-card-img bg-[#c9d6e1] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img alt="Camisa oversized Symbol" class="w-full h-full object-contain mix-blend-multiply opacity-90" src="images/symbol.png"
+                        />
+                    </div>
+                    <h3 class="font-medium text-slate-900">Camisa oversized Symbol</h3>
+                    <p class="font-bold text-lg mt-2">R$129,99</p>
+                </a>
+                <a href="detalhesProduto.html" class="group block">
+                    <div class="product-card-img bg-[#c9d6e1] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img alt="Camiseta oversized Akasa" class="w-full h-full object-contain mix-blend-multiply opacity-90" src="images/akasa.png"
+                        />
+                    </div>
+                    <h3 class="font-medium text-slate-900">Camiseta oversized Akasa</h3>
+                    <p class="font-bold text-lg mt-2">R$129,99</p>
+                </a>
+                <a href="detalhesProduto.html" class="group block">
+                    <div class="product-card-img bg-[#dbe2e8] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img alt="Camiseta oversized Mahoraga" class="w-full h-full object-contain mix-blend-multiply opacity-80" src="images/mahoraga.png"
+                        />
+                    </div>
+                    <h3 class="font-medium text-slate-900">Camiseta oversized Mahoraga</h3>
+                    <p class="font-bold text-lg mt-2">R$129,99</p>
+                </a>
+                <a href="detalhesProduto.html">
+                <div class="group">
+                    <div class="product-card-img bg-[#dbe2e8] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img alt="Camiseta oversized Brother" class="w-full h-full object-contain mix-blend-multiply opacity-80" src="images/brother.png"
+                        />
+                    </div>
+                    <h3 class="font-medium text-slate-900">Camiseta oversized Brother</h3>
+                    <p class="font-bold text-lg mt-2">R$129,99</p>
+                </div>
+                </a>
+                <a href="detalhesProduto.html">
+                <div class="group">
+                    <div class="product-card-img bg-[#dbe2e8] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img alt="Camiseta oversized Paisagem" class="w-full h-full object-contain mix-blend-multiply opacity-80" src="images/paisagem.png"
+                        />
+                    </div>
+                    <h3 class="font-medium text-slate-900">Camiseta oversized Paisagem</h3>
+                    <p class="font-bold text-lg mt-2">R$129,99</p>
+                </div>
+                </a>
+                <a href="detalhesProduto.html">
+                <div class="group">
+                    <div class="product-card-img bg-[#dbe2e8] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img alt="Camiseta oversized Zenitsu" class="w-full h-full object-contain mix-blend-multiply opacity-80" src="images/zenitsu.png"
+                        />
+                    </div>
+                    <h3 class="font-medium text-slate-900">Camiseta oversized Zenitsu</h3>
+                    <p class="font-bold text-lg mt-2">R$129,99</p>
+                </div>
+                </a>
+                <a href="detalhesProduto.html">
+                <div class="group">
+                    <div class="product-card-img bg-[#c9d6e1] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img alt="Camiseta oversized Lisa" class="w-full h-full object-contain mix-blend-multiply opacity-90" src="images/lisa.png"
+                        />
+                    </div>
+                    <h3 class="font-medium text-slate-900">Camiseta oversized Preta</h3>
+                    <p class="font-bold text-lg mt-2">R$129,99</p>
+                </div>
+                </a>
+                <a href="detalhesProduto.html">
+                <div class="group">
+                    <div class="product-card-img bg-[#c9d6e1] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img alt="Camiseta oversized Toji" class="w-full h-full object-contain mix-blend-multiply opacity-90" src="images/toji.png"
+                        />
+                    </div>
+                    <h3 class="font-medium text-slate-900">Camiseta oversized Toji</h3>
+                    <p class="font-bold text-lg mt-2">R$129,99</p>
+                </div>
+                </a>
+            </div>
+            <div class="mt-20 flex items-center justify-between border-t border-slate-100 pt-8">
+                <button class="flex items-center gap-2 border border-slate-200 px-4 py-2 rounded text-sm font-medium hover:bg-slate-50 transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">arrow_back</span> Anterior
+                </button>
+                <div class="flex items-center gap-1">
+                    <button class="w-8 h-8 flex items-center justify-center rounded bg-slate-100 text-sm font-medium">1</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-slate-50 text-sm font-medium">2</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-slate-50 text-sm font-medium">3</button>
+                    <span class="px-2 text-slate-400">...</span>
+                    <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-slate-50 text-sm font-medium">8</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-slate-50 text-sm font-medium">9</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-slate-50 text-sm font-medium">10</button>
+                </div>
+                <button class="flex items-center gap-2 border border-slate-200 px-4 py-2 rounded text-sm font-medium hover:bg-slate-50 transition-colors">
+                    Próxima
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-50 mt-20 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <div class="lg:col-span-1">
+                    <div class="font-black text-3xl tracking-tighter mb-6">
+                        <span class="text-primary">ZENITH</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed max-w-xs">
+                        Performance, estilo e conforto em um só lugar. Tudo para elevar o seu treino com camisetas oversized projetadas para máxima liberdade, respirabilidade e durabilidade.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-6 uppercase tracking-wider">Companhia</h4>
+                    <ul class="space-y-4 text-xs text-slate-600 font-medium">
+                        <li><a class="hover:text-primary" href="#">Sobre Nós</a></li>
+                        <li><a class="hover:text-primary" href="#">Nossas Marcas</a></li>
+                        <li><a class="hover:text-primary" href="#">Como Funciona</a></li>
+                        <li><a class="hover:text-primary" href="#">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-6 uppercase tracking-wider">Ajuda</h4>
+                    <ul class="space-y-4 text-xs text-slate-600 font-medium">
+                        <li><a class="hover:text-primary" href="#">Suporte ao Cliente</a></li>
+                        <li><a class="hover:text-primary" href="#">Informações de Entrega</a></li>
+                        <li><a class="hover:text-primary" href="#">Termos e Condições</a></li>
+                        <li><a class="hover:text-primary" href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-6 uppercase tracking-wider">FAQ</h4>
+                    <ul class="space-y-4 text-xs text-slate-600 font-medium">
+                        <li><a class="hover:text-primary" href="#">Minha Conta</a></li>
+                        <li><a class="hover:text-primary" href="#">Acompanhamento de Pedidos</a></li>
+                        <li><a class="hover:text-primary" href="#">Trocas e Devoluções</a></li>
+                        <li><a class="hover:text-primary" href="#">Pagamentos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-6 uppercase tracking-wider">Recursos</h4>
+                    <ul class="space-y-4 text-xs text-slate-600 font-medium">
+                        <li><a class="hover:text-primary" href="#">Guias de Treino</a></li>
+                        <li><a class="hover:text-primary" href="#">Dicas de Suplementação</a></li>
+                        <li><a class="hover:text-primary" href="#">Blog Zenith</a></li>
+                        <li><a class="hover:text-primary" href="#">Aulas &amp; Conteúdos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] text-slate-400 font-medium uppercase tracking-widest">
+                    Zenith © 2025, Todos os Direitos Reservados
+                </p>
+                <div class="flex items-center gap-4 opacity-70 grayscale hover:grayscale-0 transition-all">
+                    <div class="w-10 h-6 bg-slate-200 rounded flex items-center justify-center font-bold text-[8px]">VISA</div>
+                    <div class="w-10 h-6 bg-slate-200 rounded flex items-center justify-center font-bold text-[8px]">MC</div>
+                    <div class="w-10 h-6 bg-slate-200 rounded flex items-center justify-center font-bold text-[8px]">PIX</div>
+                    <div class="w-10 h-6 bg-slate-200 rounded flex items-center justify-center font-bold text-[8px]">APPLE</div>
+                    <div class="w-10 h-6 bg-slate-200 rounded flex items-center justify-center font-bold text-[8px]">GPAY</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Perfil do Cliente (Dashboard) - Sem Cupons</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  primary: "#18181B",
+                  "background-light": "#F4F4F5",
+                  "background-dark": "#09090B",
+                },
+                fontFamily: {
+                  display: ["Urbanist", "sans-serif"],
+                },
+                borderRadius: {
+                  DEFAULT: "0.5rem",
+                },
+              },
+            },
+          };
+    </script>
+    <style>
+        .material-icons-outlined {
+            font-size: inherit;
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-zinc-900 dark:text-zinc-100 antialiased">
+    <div class="min-h-screen flex">
+        <aside class="w-64 bg-white dark:bg-zinc-900 flex-shrink-0 p-6 border-r border-zinc-200 dark:border-zinc-800 hidden md:flex flex-col">
+            <a href="homepage.html" class="mb-10 block hover:opacity-80 transition-opacity">
+                <img alt="Zenith Logo" class="h-12" src="images/logo-zenith.png" />
+            </a>
+            <nav class="flex flex-col space-y-2">
+                <a class="flex items-center gap-3 px-4 py-2 text-primary dark:text-white bg-zinc-100 dark:bg-zinc-800 rounded-lg font-semibold" href="dashboardCliente.html">
+                    <span class="material-icons-outlined text-xl">dashboard</span> Dashboard
+                </a>
+                <a class="flex items-center gap-3 px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg" href="pedidosCliente.html">
+                    <span class="material-icons-outlined text-xl">shopping_bag</span> Meus Pedidos
+                </a>
+                <a class="flex items-center gap-3 px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg" href="enderecosCliente.html">
+                    <span class="material-icons-outlined text-xl">location_on</span> Endereços
+                </a>
+                <a class="flex items-center gap-3 px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg" href="cartoesCliente.html">
+                    <span class="material-icons-outlined text-xl">credit_card</span> Cartões
+                </a>
+            </nav>
+            <div class="mt-auto">
+                <a class="flex items-center gap-3 px-4 py-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg" href="#">
+                    <span class="material-icons-outlined text-xl">logout</span> Sair
+                </a>
+            </div>
+        </aside>
+        <main class="flex-1 p-6 md:p-10">
+            <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-zinc-900 dark:text-white">Perfil do Cliente</h2>
+                    <p class="text-zinc-500 dark:text-zinc-400 mt-1">Gerencie suas informações e acompanhe seu histórico.</p>
+                </div>
+                <div class="flex items-center gap-4 mt-4 md:mt-0">
+                    <button class="p-2 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-800">
+                        <span class="material-icons-outlined">notifications</span>
+                    </button>
+                    <img alt="Avatar do usuário" class="w-10 h-10 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARqJjuqIPdxATHMDc5yZ4MwPJJpt6kU87SzhLKCRlhzEsRveGs_aNl1kHM6gcynehc7gCUKlmEV_8HS0caxZMDJJju0rH_prXk6skobAzKf4-WK3FSIJCHMSdyUfm58MnKYol16MucsNs9jIQHc9h68nF1bDghFFpnYnbFnxg9g4ZrcyIogsbG9thtN4492DbTWd87TNmofoaMILTjwPV6gMDPSDUw-azNFdxF8-tCO8za24moK2NYJH-6LyMgBjWZFz0EbEsecA"
+                    />
+                </div>
+            </header>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1 space-y-8">
+                    <div class="bg-white dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 text-center">
+                        <img alt="Avatar do usuário" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzx65vLSul8Cf2pElFIXEotsQSV0hj0T5aaUEx648PKzwg2s68qOIjd5IQTeYAozzPo-2VPrYbSY3uR_lxY3LZykzuHgLwADKK71SF6n87rsyhGJNXUHrPuW8ner8XwFuJFvf2tSxSBKwG6FQfruOs9OlUlrDrjG_5BPUzl3D6SLGq0k4TBqZOuENo9hwgHwUffMzF4YO367B8bCT1jW6X5pAXym109HdPHQoBtOjcWUZyA5JUyCVtJlHvFHd-CuR3SJxsKcfouQ"
+                        />
+                        <h3 class="text-xl font-bold">Ana Oliveira</h3>
+                        <p class="text-zinc-500 dark:text-zinc-400">ana.oliveira@email.com</p>
+                        <a href="popUpAlterarDadosPessoais.html" class="mt-4 w-full bg-primary text-white py-2 px-4 rounded-md font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-700 transition-colors inline-block text-center">
+                            Editar Perfil
+                        </a>
+                    </div>
+                    <div class="bg-white dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-lg font-bold">Seu Ranking</h4>
+                            <span class="material-icons-outlined text-yellow-500">military_tech</span>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-5xl font-extrabold text-primary dark:text-white">#1.245</p>
+                            <p class="text-zinc-500 dark:text-zinc-400 mt-1">Entre 25.000+ clientes</p>
+                        </div>
+                        <div class="mt-6 space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-zinc-600 dark:text-zinc-400">Compras Realizadas</span>
+                                <span class="font-semibold">32</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-zinc-600 dark:text-zinc-400">Engajamento</span>
+                                <span class="font-semibold text-green-500">Alto</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <div class="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
+                        <div class="p-6 border-b border-zinc-200 dark:border-zinc-800">
+                            <h4 class="text-lg font-bold">Histórico de Transações</h4>
+                            <p class="text-sm text-zinc-500 dark:text-zinc-400">Veja suas compras e trocas.</p>
+                        </div>
+                        <div class="px-6 border-b border-zinc-200 dark:border-zinc-800">
+                            <nav class="flex space-x-6">
+                                <button class="py-3 text-sm font-semibold border-b-2 border-primary text-primary dark:text-white">Todas</button>
+                                <button class="py-3 text-sm font-semibold border-b-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-white">Compras</button>
+                                <button class="py-3 text-sm font-semibold border-b-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-white">Trocas</button>
+                            </nav>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left">
+                                <thead class="text-xs text-zinc-500 dark:text-zinc-400 uppercase bg-zinc-50 dark:bg-zinc-800/50">
+                                    <tr>
+                                        <th class="px-6 py-3" scope="col">ID Transação</th>
+                                        <th class="px-6 py-3" scope="col">Data</th>
+                                        <th class="px-6 py-3" scope="col">Tipo</th>
+                                        <th class="px-6 py-3" scope="col">Valor</th>
+                                        <th class="px-6 py-3" scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/50">
+                                        <td class="px-6 py-4 font-medium">#ZNT-84302</td>
+                                        <td class="px-6 py-4 text-zinc-600 dark:text-zinc-400">15 Jul, 2024</td>
+                                        <td class="px-6 py-4">Compra</td>
+                                        <td class="px-6 py-4 font-medium">R$129,99</td>
+                                        <td class="px-6 py-4">
+                                            <span class="inline-flex items-center bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full">
+<span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span> Entregue
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/50">
+                                        <td class="px-6 py-4 font-medium">#ZNT-79551</td>
+                                        <td class="px-6 py-4 text-zinc-600 dark:text-zinc-400">02 Jun, 2024</td>
+                                        <td class="px-6 py-4">Troca</td>
+                                        <td class="px-6 py-4 font-medium">R$99,99</td>
+                                        <td class="px-6 py-4">
+                                            <span class="inline-flex items-center bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full">
+<span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span> Concluída
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/50">
+                                        <td class="px-6 py-4 font-medium">#ZNT-78103</td>
+                                        <td class="px-6 py-4 text-zinc-600 dark:text-zinc-400">15 Mai, 2024</td>
+                                        <td class="px-6 py-4">Compra</td>
+                                        <td class="px-6 py-4 font-medium">R$259,98</td>
+                                        <td class="px-6 py-4">
+                                            <span class="inline-flex items-center bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full">
+<span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span> Entregue
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-zinc-50 dark:hover:bg-zinc-800/50">
+                                        <td class="px-6 py-4 font-medium">#ZNT-75001</td>
+                                        <td class="px-6 py-4 text-zinc-600 dark:text-zinc-400">21 Abr, 2024</td>
+                                        <td class="px-6 py-4">Compra</td>
+                                        <td class="px-6 py-4 font-medium">R$99,99</td>
+                                        <td class="px-6 py-4">
+                                            <span class="inline-flex items-center bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full">
+<span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span> Cancelado
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
