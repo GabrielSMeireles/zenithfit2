@@ -5,28 +5,28 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Zenith - Gestão de Endereços (Edição Aberta)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
-                extend: {
-                    colors: {
-                        primary: "#A38B78",
-                        "background-light": "#F5F5F5",
-                        "background-dark": "#1A1A1A",
-                    },
-                    fontFamily: {
-                        display: ["Poppins", "sans-serif"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.75rem",
-                    },
+              extend: {
+                colors: {
+                  primary: "#18181B",
+                  "background-light": "#F4F4F5",
+                  "background-dark": "#09090B",
                 },
+                fontFamily: {
+                  display: ["Urbanist", "sans-serif"],
+                },
+                borderRadius: {
+                  DEFAULT: "0.5rem",
+                },
+              },
             },
-        };
+          };
     </script>
     <style>
         .material-icons-outlined {
@@ -40,6 +40,7 @@
         <aside class="w-64 bg-white dark:bg-zinc-900 flex-shrink-0 p-6 border-r border-zinc-200 dark:border-zinc-800 hidden md:flex flex-col">
             <a href="homepage.html" class="mb-10 block hover:opacity-80 transition-opacity">
                 <img alt="Zenith Logo" class="h-12" src="images/logo-zenith.png" />
+            </a>
             <nav class="flex flex-col space-y-2">
                 <a class="flex items-center gap-3 px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg" href="dashboardCliente.html">
                     <span class="material-icons-outlined text-xl">dashboard</span> Dashboard
