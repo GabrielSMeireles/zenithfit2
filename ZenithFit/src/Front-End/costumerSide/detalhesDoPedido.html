@@ -6,55 +6,58 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Detalhe do Pedido</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-    <style type="text/tailwindcss">
-        @layer base { h1, h2, h3, h4, h5, h6 { font-family: 'Roboto', sans-serif; font-weight: 700; } body { font-family: 'Roboto', sans-serif; } }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
               extend: {
                 colors: {
-                  primary: "#333333",
-                  "background-light": "#F3F4F6", // A light gray, similar to screenshot bg
-                  "background-dark": "#111827", // A standard dark gray
+                  primary: "#18181B",
+                  "background-light": "#F4F4F5",
+                  "background-dark": "#09090B",
                 },
                 fontFamily: {
-                  display: ["Roboto", "sans-serif"],
+                  display: ["Inter", "sans-serif"],
                 },
                 borderRadius: {
-                  DEFAULT: "0.5rem", // 8px, a modern rounded corner
+                  DEFAULT: "0.5rem",
                 },
               },
             },
           };
     </script>
+    <style>
+        .material-symbols-outlined {
+            font-size: inherit;
+        }
+    </style>
 </head>
 
 <body class="font-display bg-background-light dark:bg-background-dark text-zinc-900 dark:text-zinc-100 antialiased">
     <div class="min-h-screen flex">
         <aside class="w-64 bg-white dark:bg-zinc-900 flex-shrink-0 p-6 border-r border-zinc-200 dark:border-zinc-800 hidden md:flex flex-col">
-            <a href="homepage.html" class="mb-10 block hover:opacity-80 transition-opacity">
-                <img alt="Zenith Logo" class="h-12" src="images/logo-zenith.png" />
+            <a href="homepage.html" class="mb-10 flex justify-center items-center hover:opacity-80 transition-opacity">
+                <img alt="Zenith Logo" class="h-16" src="images/logo-zenith.png" />
+            </a>
             <nav class="flex flex-col space-y-2">
                 <a class="flex items-center gap-3 px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg" href="dashboardCliente.html">
-                    <span class="material-icons-outlined text-xl">dashboard</span> Dashboard
+                    <span class="material-symbols-outlined text-xl">dashboard</span> Dashboard
                 </a>
                 <a class="flex items-center gap-3 px-4 py-2 text-primary dark:text-white bg-zinc-100 dark:bg-zinc-800 rounded-lg font-semibold" href="pedidosCliente.html">
-                    <span class="material-icons-outlined text-xl">shopping_bag</span> Meus Pedidos
+                    <span class="material-symbols-outlined text-xl">shopping_bag</span> Meus Pedidos
                 </a>
                 <a class="flex items-center gap-3 px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg" href="enderecosCliente.html">
-                    <span class="material-icons-outlined text-xl">location_on</span> Endereços
+                    <span class="material-symbols-outlined text-xl">location_on</span> Endereços
                 </a>
                 <a class="flex items-center gap-3 px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg" href="cartoesCliente.html">
-                    <span class="material-icons-outlined text-xl">credit_card</span> Cartões
+                    <span class="material-symbols-outlined text-xl">credit_card</span> Cartões
                 </a>
             </nav>
             <div class="mt-auto">
                 <a class="flex items-center gap-3 px-4 py-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg" href="#">
-                    <span class="material-icons-outlined text-xl">logout</span> Sair
+                    <span class="material-symbols-outlined text-xl">logout</span> Sair
                 </a>
             </div>
         </aside>
@@ -75,7 +78,7 @@
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Realizado em 15 de Julho, 2024</p>
                 </div>
                 <div class="mt-4 md:mt-0 flex items-center space-x-3 bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 py-2 px-4 rounded-full">
-                    <span class="material-icons-outlined text-xl">check_circle</span>
+                    <span class="material-symbols-outlined text-xl">check_circle</span>
                     <span class="font-medium">ENTREGUE</span>
                 </div>
             </div>
@@ -123,14 +126,95 @@
             </div>
             <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 text-center">
                 <p class="text-gray-600 dark:text-gray-400 mb-4">Precisa trocar algum item? Você pode solicitar a troca até 7 dias após o recebimento.</p>
-                <a href="solicitacaoDeTroca.html" class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center mx-auto inline-flex">
-                    <span class="material-icons-outlined mr-2">swap_horiz</span> Solicitar Troca
-                </a>
+                <button onclick="openExchangeModal()" class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center">
+                    <span class="material-symbols-outlined mr-2">swap_horiz</span> Solicitar Troca
+                </button>
             </div>
             </div>
         </main>
     </div>
 
-</body>
+    <!-- Modal: Solicitação de Troca -->
+    <div id="exchangeModal" class="hidden fixed inset-0 bg-black/60 dark:bg-black/70 flex items-center justify-center p-4 z-50">
+        <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-2xl w-full max-w-lg mx-auto flex flex-col">
+            <div class="p-6 flex justify-between items-center border-b border-zinc-200 dark:border-zinc-700">
+                <h2 class="text-xl font-bold text-zinc-900 dark:text-white">Solicitação de Troca</h2>
+                <button onclick="closeExchangeModal()" class="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200 transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="p-6 flex-grow">
+                <div class="flex items-start space-x-4 mb-6">
+                    <img alt="Camisa oversized Limitless" class="w-24 h-24 object-cover rounded" src="images/limitless.png" />
+                    <div>
+                        <p class="text-lg font-semibold text-zinc-900 dark:text-white">Camisa oversized Limitless</p>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400">Tamanho: M</p>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400">Cor: Preto</p>
+                    </div>
+                </div>
+                <form id="exchangeForm">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-md font-medium text-zinc-700 dark:text-zinc-300 mb-2" for="reason">Motivo da troca</label>
+                            <select class="w-full px-3 py-2 bg-zinc-100 dark:bg-zinc-700 border border-zinc-300 dark:border-zinc-600 text-zinc-900 dark:text-zinc-100 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" id="reason" name="reason">
+                                <option value="">Selecione um motivo...</option>
+                                <option value="tamanho">Tamanho incorreto</option>
+                                <option value="nao-gostei">Não gostei do produto</option>
+                                <option value="cor">Cor</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-md font-medium text-zinc-700 dark:text-zinc-300 mb-2" for="description">Descrição</label>
+                            <textarea class="w-full px-3 py-2 bg-zinc-100 dark:bg-zinc-700 border border-zinc-300 dark:border-zinc-600 text-zinc-900 dark:text-zinc-100 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" id="description" name="description" rows="4" placeholder="Descreva mais detalhes sobre o motivo da troca..."></textarea>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-zinc-100 dark:bg-zinc-700/50 rounded-lg flex items-start space-x-3">
+                        <span class="material-symbols-outlined text-zinc-600 dark:text-zinc-400 mt-0.5">info</span>
+                        <p class="text-sm text-zinc-700 dark:text-zinc-300">
+                            Ao confirmar, um novo pedido será gerado com o status 'EM TROCA'. Você receberá as instruções para envio do produto por e-mail.
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="p-6 bg-zinc-50 dark:bg-zinc-700/30 rounded-b-lg border-t border-zinc-200 dark:border-zinc-700 flex justify-end space-x-4">
+                <button onclick="closeExchangeModal()" class="px-6 py-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300 bg-white dark:bg-zinc-700 border border-zinc-300 dark:border-zinc-600 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-600 transition-colors">
+                    Cancelar
+                </button>
+                <button onclick="submitExchange(event)" class="px-6 py-3 text-sm font-semibold text-white bg-primary rounded-md hover:opacity-90 transition-opacity">
+                    Confirmar Troca
+                </button>
+            </div>
+        </div>
+    </div>
 
-</html>
+    <script>
+        function openExchangeModal() {
+            document.getElementById('exchangeModal').classList.remove('hidden');
+        }
+
+        function closeExchangeModal() {
+            document.getElementById('exchangeModal').classList.add('hidden');
+            document.getElementById('exchangeForm').reset();
+        }
+
+        function submitExchange(event) {
+            event.preventDefault();
+            const reason = document.getElementById('reason').value;
+            const description = document.getElementById('description').value;
+            
+            if (!reason) {
+                alert('Por favor, selecione um motivo para a troca.');
+                return;
+            }
+            
+            alert('Solicitação de troca enviada com sucesso! Você receberá as instruções por e-mail.');
+            closeExchangeModal();
+        }
+
+        // Fechar modal ao clicar fora
+        document.getElementById('exchangeModal').addEventListener('click', (e) => {
+            if (e.target.id === 'exchangeModal') {
+                closeExchangeModal();
+            }
+        });
+    </script>

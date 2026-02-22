@@ -115,9 +115,9 @@
                         </div>
                         <div class="px-6 border-b border-zinc-200 dark:border-zinc-800">
                             <nav class="flex space-x-6">
-                                <button class="py-3 text-sm font-semibold border-b-2 border-primary text-primary dark:text-white">Todas</button>
-                                <button class="py-3 text-sm font-semibold border-b-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-white">Compras</button>
-                                <button class="py-3 text-sm font-semibold border-b-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-white">Trocas</button>
+                                <button onclick="filterTransactions('all')" class="filter-btn py-3 text-sm font-semibold border-b-2 border-primary text-primary dark:text-white" data-filter="all">Todas</button>
+                                <button onclick="filterTransactions('compra')" class="filter-btn py-3 text-sm font-semibold border-b-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-white" data-filter="compra">Compras</button>
+                                <button onclick="filterTransactions('troca')" class="filter-btn py-3 text-sm font-semibold border-b-2 border-transparent text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-white" data-filter="troca">Trocas</button>
                             </nav>
                         </div>
                         <div class="overflow-x-auto">
@@ -132,7 +132,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/50">
+                                    <tr class="transaction-row border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/50" data-type="compra">
                                         <td class="px-6 py-4 font-medium">#ZNT-84302</td>
                                         <td class="px-6 py-4 text-zinc-600 dark:text-zinc-400">15 Jul, 2024</td>
                                         <td class="px-6 py-4">Compra</td>
@@ -143,7 +143,7 @@
                                             </span>
                                         </td>
                                     </tr>
-                                    <tr class="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/50">
+                                    <tr class="transaction-row border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/50" data-type="troca">
                                         <td class="px-6 py-4 font-medium">#ZNT-79551</td>
                                         <td class="px-6 py-4 text-zinc-600 dark:text-zinc-400">02 Jun, 2024</td>
                                         <td class="px-6 py-4">Troca</td>
@@ -154,7 +154,7 @@
                                             </span>
                                         </td>
                                     </tr>
-                                    <tr class="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/50">
+                                    <tr class="transaction-row border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/50" data-type="compra">
                                         <td class="px-6 py-4 font-medium">#ZNT-78103</td>
                                         <td class="px-6 py-4 text-zinc-600 dark:text-zinc-400">15 Mai, 2024</td>
                                         <td class="px-6 py-4">Compra</td>
@@ -165,7 +165,7 @@
                                             </span>
                                         </td>
                                     </tr>
-                                    <tr class="hover:bg-zinc-50 dark:hover:bg-zinc-800/50">
+                                    <tr class="transaction-row hover:bg-zinc-50 dark:hover:bg-zinc-800/50" data-type="compra">
                                         <td class="px-6 py-4 font-medium">#ZNT-75001</td>
                                         <td class="px-6 py-4 text-zinc-600 dark:text-zinc-400">21 Abr, 2024</td>
                                         <td class="px-6 py-4">Compra</td>
@@ -366,6 +366,34 @@
             event.preventDefault();
             alert('Senha alterada com sucesso!');
             closePasswordModal();
+        }
+
+        // Filtrar Transações
+        function filterTransactions(type) {
+            const rows = document.querySelectorAll('.transaction-row');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Atualizar estilo dos botões
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === type) {
+                    btn.classList.remove('border-transparent', 'text-zinc-500', 'dark:text-zinc-400');
+                    btn.classList.add('border-primary', 'dark:border-primary', 'text-primary', 'dark:text-primary', 'font-semibold');
+                } else {
+                    btn.classList.remove('border-primary', 'dark:border-primary', 'text-primary', 'dark:text-primary', 'font-semibold');
+                    btn.classList.add('border-transparent', 'text-zinc-500', 'dark:text-zinc-400');
+                }
+            });
+            
+            // Mostrar/Ocultar linhas da tabela
+            rows.forEach(row => {
+                if (type === 'all') {
+                    row.classList.remove('hidden');
+                } else if (row.getAttribute('data-type') === type) {
+                    row.classList.remove('hidden');
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
         }
 
         // Fechar modal ao clicar fora
