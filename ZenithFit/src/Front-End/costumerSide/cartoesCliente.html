@@ -135,7 +135,7 @@
                             </label>
                         </div>
                         <div class="pt-4">
-                            <button class="w-full bg-primary text-white font-bold py-2.5 px-6 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2" type="submit">
+                            <button class="w-full bg-primary text-white font-bold py-2.5 px-6 rounded-lg hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-2" type="button" onclick="submitAddCard(event)">
                                 <span class="material-icons-outlined">add_card</span> Adicionar Cartão
                             </button>
                         </div>
@@ -145,6 +145,15 @@
         </main>
     </div>
 
+    <script>
+        function submitAddCard(event) {
+            event.preventDefault();
+            alert('Cartão adicionado com sucesso!');
+            const form = event.target.closest('form');
+            form.reset();
+            form.closest('details').removeAttribute('open');
+        }
+    </script>
 </body>
 
 </html>
