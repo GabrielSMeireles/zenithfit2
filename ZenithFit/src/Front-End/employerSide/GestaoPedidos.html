@@ -39,54 +39,47 @@
 <body class="bg-background-light font-display">
 
 <div class="flex h-screen overflow-hidden">
-    <aside class="flex w-64 flex-col justify-between bg-black p-4 border-r border-slate-800 shrink-0">
-        <div class="flex flex-col gap-4">
-            <div class="flex items-center gap-3 py-3">
-                <div class="size-8 bg-primary rounded-lg flex items-center justify-center">
-                    <span class="material-symbols-outlined text-white text-xl" style="font-variation-settings: 'FILL' 1;">all_inbox</span>
-                </div>
-                <h2 class="text-lg font-bold text-white">Admin Panel</h2>
-            </div>
+    <aside class="flex w-64 flex-col border-r border-slate-200 dark:border-slate-800 bg-black p-4 font-display">
+    <div class="flex items-center gap-3 p-2 mb-4">
+    <h2 class="text-lg font-bold text-white">Admin Panel</h2>
+    </div>
+    <div class="flex flex-col justify-between flex-grow">
+    <div class="flex flex-col gap-1">
+    <a href="AnaliseVendas.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white">
+      <span class="material-symbols-outlined">bar_chart</span>
+      <p class="text-sm font-medium leading-none">Análise de Vendas</p>
+    </a>
 
-            <nav class="flex flex-col gap-2 mt-4">
-                <a href="AnaliseVendas.html" class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-white/10 hover:text-white rounded-lg transition-colors">
-                    <span class="material-symbols-outlined">analytics</span>
-                    <p class="text-sm font-medium">Análise de Vendas</p>
-                </a>
-                
-                <a href="GestaoClientes.html" class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-white/10 hover:text-white rounded-lg transition-colors">
-                    <span class="material-symbols-outlined">group</span>
-                    <p class="text-sm font-medium">Clientes</p>
-                </a>
+    <a href="GestaoClientes.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10">
+    <span class="material-symbols-outlined">group</span>
+    <p class="text-sm font-medium leading-normal">Clientes</p>
+    </a>
 
-                <a href="GestaoPedidos.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white">
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
-                    <p class="text-sm font-medium">Pedidos</p>
-                </a>
+    <a href= "GestaoPedidos.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10" >
+    <span class="material-symbols-outlined">shopping_cart</span>
+    <p class="text-sm font-medium leading-normal">Pedidos</p>
+    </a>
 
-                <a href="DashboardCamisa.html" class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-white/10 hover:text-white rounded-lg transition-colors">
-                    <span class="material-symbols-outlined">inventory_2</span>
-                    <p class="text-sm font-medium">Produtos</p>
-                </a>
+    <a href="DashboardCamisa.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10">
+    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+    <p class="text-sm font-medium leading-normal">Produtos</p>
+    </a>
 
-                <a href="GestaoTrocas.html" class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-white/10 hover:text-white rounded-lg transition-colors">
-                    <span class="material-symbols-outlined">published_with_changes</span>
-                    <p class="text-sm font-medium">Trocas</p>
-                </a>
-            </nav>
-        </div>
-
-        <div class="flex flex-col">
-            <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
-                <div class="bg-slate-700 aspect-square rounded-full size-10 flex items-center justify-center text-white">
-                    <span class="material-symbols-outlined">person</span>
-                </div>
-                <div class="flex flex-col overflow-hidden">
-                    <h1 class="text-white text-sm font-medium truncate">Admin User</h1>
-                    <p class="text-slate-500 text-xs truncate">admin@example.com</p>
-                </div>
-            </div>
-        </div>
+    <a href="GestaoTrocas.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10">
+    <span class="material-symbols-outlined">sync_alt</span>
+    <p class="text-sm font-medium leading-normal">Trocas</p>
+    </a>
+    </div>
+    <div class="flex flex-col gap-1">
+    <div class="flex items-center gap-3 p-3 mt-4 border-t border-slate-800">
+    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Avatar of Admin User" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHPIQYwxnJ5P-25YnRHu5hJDz9WOGBE8hsCjpeHqD0nhZjoO4v8kLY5srs7GVCQBOyE2nOQQ2z-V2TMj8sF-VOyhVtM8U0rgIyork-vsTGSHF_CrXgqbNHNo0l3sKfFAkvdn8KsZ35QjS7vv3swukZxYzMRw_pO0hFs3E6epXk2HujtYkgj3OAeSIkg_NfwBLkax8dN5aTDgjuurKs3LtT2zXdVE1E7vIDanhwL0AseXGrj30BKsLM7pT5OqB5c9SkN26QJo8WBLiE");'></div>
+    <div class="flex flex-col">
+    <h2 class="text-white text-sm font-medium leading-normal">Admin User</h2>
+    <p class="text-slate-400 text-xs font-normal leading-normal">admin@example.com</p>
+    </div>
+    </div>
+    </div>
+    </div>
     </aside>
 
     <div class="flex flex-1 flex-col bg-white overflow-y-auto">
