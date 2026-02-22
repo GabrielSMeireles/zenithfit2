@@ -78,7 +78,7 @@
                                         <p class="text-gray-600 dark:text-gray-400">CEP: 80210-140</p>
                                     </div>
                                     <div class="flex items-center gap-2">
-                                        <button class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                                        <button class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" onclick="openEditModal('billing', 'Casa', 'Rua das Flores', '123', 'Apto 45', 'Jardim Botânico', 'Curitiba', 'PR', '80210-140', 'Brasil', false)">
                                             <span class="material-icons-outlined text-xl">edit</span>
                                         </button>
                                         <button class="p-2 text-gray-300 dark:text-gray-600 cursor-not-allowed" disabled="">
@@ -103,7 +103,7 @@
                                             <p class="text-gray-600 dark:text-gray-400">CEP: 80210-140</p>
                                         </div>
                                         <div class="flex items-center gap-2">
-                                            <a class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="enderecosClienteEdicao.html">
+                                            <a class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" onclick="openEditModal('delivery', 'Casa (Principal)', 'Rua das Flores', '123', 'Apto 45', 'Jardim Botânico', 'Curitiba', 'PR', '80210-140', 'Brasil', true)">
                                                 <span class="material-icons-outlined text-xl">edit</span>
                                             </a>
                                             <button class="p-2 text-gray-300 dark:text-gray-600 cursor-not-allowed" disabled="">
@@ -121,7 +121,7 @@
                                             <p class="text-gray-600 dark:text-gray-400">CEP: 80420-090</p>
                                         </div>
                                         <div class="flex items-center gap-2">
-                                            <a class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="enderecosClienteEdicao.html">
+                                            <a class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" onclick="openEditModal('delivery', 'Trabalho', 'Avenida do Batel', '1868', 'Sala 302', 'Batel', 'Curitiba', 'PR', '80420-090', 'Brasil', false)">
                                                 <span class="material-icons-outlined text-xl">edit</span>
                                             </a>
                                             <button class="p-2 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-500 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
@@ -186,6 +186,120 @@
         </main>
     </div>
 
-</body>
+    <!-- Modal de Edição -->
+    <div id="editModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white" id="modalTitle">Editar Endereço</h2>
+                    <button onclick="closeEditModal()" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+                        <span class="material-icons-outlined text-2xl">close</span>
+                    </button>
+                </div>
+            </div>
+            <form class="p-6 space-y-6" onsubmit="saveAddress(event)">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="editResidenceType">Tipo de residência</label>
+                        <input class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary" id="editResidenceType" type="text" placeholder="Ex: Casa, Apartamento" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="editCep">CEP</label>
+                        <input class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary" id="editCep" type="text" placeholder="00000-000" />
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="editStreet">Logradouro</label>
+                        <input class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary" id="editStreet" type="text" placeholder="Rua, Avenida, etc." />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="editNumber">Número</label>
+                        <input class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary" id="editNumber" type="text" placeholder="Ex: 123" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="editComplement">Complemento</label>
+                        <input class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary" id="editComplement" type="text" placeholder="Apto, Sala, etc." />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="editNeighborhood">Bairro</label>
+                        <input class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary" id="editNeighborhood" type="text" placeholder="Ex: Jardim Botânico" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="editCity">Cidade</label>
+                        <input class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary" id="editCity" type="text" placeholder="Ex: Curitiba" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="editState">Estado</label>
+                        <input class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary" id="editState" type="text" placeholder="Ex: PR" />
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="editCountry">País</label>
+                        <input class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary" id="editCountry" type="text" placeholder="Ex: Brasil" />
+                    </div>
+                </div>
+                <div id="defaultAddressContainer" class="hidden">
+                    <label class="flex items-center gap-2">
+                        <input id="editIsDefault" type="checkbox" class="w-4 h-4 text-primary rounded focus:ring-primary" />
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Definir como endereço padrão</span>
+                    </label>
+                </div>
+                <div class="flex justify-end gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <button class="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 font-semibold py-2 px-6 rounded-md hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors" type="button" onclick="closeEditModal()">Cancelar</button>
+                    <button class="bg-primary text-white font-semibold py-2 px-6 rounded-md hover:opacity-90 transition-opacity flex items-center gap-2" type="submit">
+                        <span class="material-icons-outlined">save</span> Salvar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-</html>
+    <script>
+        let currentAddressType = 'delivery';
+
+        function openEditModal(type, residenceType, street, number, complement, neighborhood, city, state, cep, country, isDefault) {
+            currentAddressType = type;
+            const modal = document.getElementById('editModal');
+            const title = document.getElementById('modalTitle');
+            const defaultContainer = document.getElementById('defaultAddressContainer');
+
+            // Preencher formulário
+            document.getElementById('editResidenceType').value = residenceType;
+            document.getElementById('editStreet').value = street;
+            document.getElementById('editNumber').value = number;
+            document.getElementById('editComplement').value = complement;
+            document.getElementById('editNeighborhood').value = neighborhood;
+            document.getElementById('editCity').value = city;
+            document.getElementById('editState').value = state;
+            document.getElementById('editCep').value = cep;
+            document.getElementById('editCountry').value = country;
+            document.getElementById('editIsDefault').checked = isDefault;
+
+            // Atualizar título e mostrar checkbox de padrão apenas para endereços de entrega
+            if (type === 'billing') {
+                title.textContent = 'Editar Endereço de Faturamento';
+                defaultContainer.classList.add('hidden');
+            } else {
+                title.textContent = `Editar Endereço: ${residenceType}`;
+                defaultContainer.classList.remove('hidden');
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeEditModal() {
+            const modal = document.getElementById('editModal');
+            modal.classList.add('hidden');
+        }
+
+        function saveAddress(event) {
+            event.preventDefault();
+            alert('Endereço salvo com sucesso!');
+            closeEditModal();
+        }
+
+        // Fechar modal ao clicar fora
+        document.getElementById('editModal').addEventListener('click', (e) => {
+            if (e.target.id === 'editModal') {
+                closeEditModal();
+            }
+        });
+    </script>
