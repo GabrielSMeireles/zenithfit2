@@ -38,24 +38,24 @@
 </head>
 <body class="bg-background-light font-display">
 
-<div class="flex h-screen overflow-hidden">
+<div class="flex h-screen w-full">
     <aside class="flex w-64 flex-col border-r border-slate-200 dark:border-slate-800 bg-black p-4 font-display">
     <div class="flex items-center gap-3 p-2 mb-4">
     <h2 class="text-lg font-bold text-white">Admin Panel</h2>
     </div>
     <div class="flex flex-col justify-between flex-grow">
     <div class="flex flex-col gap-1">
-    <a href="AnaliseVendas.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white">
-      <span class="material-symbols-outlined">bar_chart</span>
-      <p class="text-sm font-medium leading-none">Análise de Vendas</p>
-    </a>
+        <a href="AnaliseVendas.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10">
+            <span class="material-symbols-outlined">bar_chart</span>
+            <p class="text-sm font-medium leading-none">Análise de Vendas</p>
+        </a>
 
     <a href="GestaoClientes.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10">
     <span class="material-symbols-outlined">group</span>
     <p class="text-sm font-medium leading-normal">Clientes</p>
     </a>
 
-    <a href= "GestaoPedidos.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10" >
+    <a href= "GestaoPedidos.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white" >
     <span class="material-symbols-outlined">shopping_cart</span>
     <p class="text-sm font-medium leading-normal">Pedidos</p>
     </a>
@@ -82,12 +82,9 @@
     </div>
     </aside>
 
-    <div class="flex flex-1 flex-col bg-white overflow-y-auto">
-        <header class="flex items-center justify-between border-b border-slate-200 px-10 py-3 min-h-[65px] shrink-0">
-            <h1 class="text-slate-900 text-2xl font-bold tracking-tight">Pedidos</h1>
-        </header>
-
-        <main class="p-10">
+    <div class="flex flex-1 flex-col overflow-y-auto">
+        <main class="flex-1 p-6 lg:p-8">
+            <div class="mx-auto max-w-7xl">
             <div class="mb-6">
                 <h1 class="text-slate-900 text-4xl font-black tracking-tight">Gestão de Pedidos</h1>
             </div>
@@ -114,15 +111,15 @@
                     </thead>
                     <tbody class="divide-y divide-slate-100">
                         <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="px-4 py-4 text-slate-900 text-sm font-bold">#10521</td>
-                            <td class="px-4 py-4 text-slate-600 text-sm">Ana Silva</td>
-                            <td class="px-4 py-4 text-slate-600 text-sm">25/10/2023</td>
+                            <td class="px-4 py-4 text-slate-900 text-sm font-bold">#12345</td>
+                            <td class="px-4 py-4 text-slate-600 text-sm">Ana Costa</td>
+                            <td class="px-4 py-4 text-slate-600 text-sm">27/10/2023</td>
                             <td class="px-4 py-4 text-slate-600 text-sm font-medium">R$ 199,90</td>
                             <td class="px-4 py-4 text-sm">
                                 <span class="inline-flex items-center rounded-full py-1 px-3 text-xs font-semibold bg-blue-50 text-blue-600">Em Processamento</span>
                             </td>
                             <td class="px-4 py-4 text-right">
-                                <button class="text-primary text-sm font-bold hover:underline">Detalhar</button>
+                                <a href="DetalhamentoPedido.html" class="text-primary text-sm font-bold hover:underline">Detalhar</a>
                             </td>
                         </tr>
                         </tbody>

@@ -37,15 +37,14 @@
     </style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
-<div class="flex min-h-screen">
+<div class="flex h-screen w-full">
 <aside class="flex w-64 flex-col border-r border-slate-200 dark:border-slate-800 bg-black p-4 font-display">
 <div class="flex items-center gap-3 p-2 mb-4">
 <h2 class="text-lg font-bold text-white">Admin Panel</h2>
 </div>
 <div class="flex flex-col justify-between flex-grow">
 <div class="flex flex-col gap-1">
-<a href="AnaliseVendas.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white">
+<a href="AnaliseVendas.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10">
     <span class="material-symbols-outlined">bar_chart</span>
     <p class="text-sm font-medium leading-none">Análise de Vendas</p>
 </a>
@@ -65,7 +64,7 @@
 <p class="text-sm font-medium leading-normal">Produtos</p>
 </a>
 
-<a href="GestaoTrocas.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-white/10">
+<a href="GestaoTrocas.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white">
 <span class="material-symbols-outlined">sync_alt</span>
 <p class="text-sm font-medium leading-normal">Trocas</p>
 </a>
@@ -81,13 +80,11 @@
 </div>
 </div>
 </aside>
-<main class="flex-1">
-<div class="layout-container flex h-full grow flex-col">
-<div class="px-4 sm:px-8 md:px-10 lg:px-12 xl:px-16 flex flex-1 justify-center py-10">
-<div class="layout-content-container flex flex-col w-full max-w-6xl flex-1">
-<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
-<h1 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tight">Gestão de Trocas</h1>
-</div>
+<main class="flex-1 p-6 lg:p-8">
+<div class="mx-auto max-w-7xl">
+<header class="flex flex-wrap items-center justify-between gap-4">
+<p class="text-background-dark dark:text-background-light text-4xl font-black leading-tight tracking-[-0.033em]">Gestão de Trocas</p>
+</header>
 <div class="mb-6 p-4 bg-white dark:bg-background-dark/50 rounded-lg border border-slate-200 dark:border-slate-800">
 <div class="flex flex-wrap items-center gap-3">
 <button class="flex h-9 items-center justify-center gap-x-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-4">
@@ -131,7 +128,7 @@
 <td class="table-col-5 h-[72px] px-4 py-2">
 <span class="inline-flex items-center rounded-full bg-yellow-100 dark:bg-yellow-900/50 px-3 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-300">EM TROCA</span>
 </td>
-<td class="table-col-6 h-[72px] px-4 py-2 text-sm font-semibold text-primary hover:underline cursor-pointer">Detalhar</td>
+<td class="table-col-6 h-[72px] px-4 py-2 text-sm font-semibold"><a href="DetalhamentoTroca.html" class="text-primary hover:underline">Detalhar</a></td>
 </tr>
 <tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
 <td class="table-col-1 h-[72px] px-4 py-2 text-sm text-slate-700 dark:text-slate-300">#12346</td>
@@ -141,7 +138,7 @@
 <td class="table-col-5 h-[72px] px-4 py-2">
 <span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-3 py-1 text-xs font-medium text-green-800 dark:text-green-300">AUTORIZADA</span>
 </td>
-<td class="table-col-6 h-[72px] px-4 py-2 text-sm font-semibold text-primary hover:underline cursor-pointer">Detalhar</td>
+<td class="table-col-6 h-[72px] px-4 py-2 text-sm font-semibold"><a href="DetalhamentoTroca.html" class="text-primary hover:underline">Detalhar</a></td>
 </tr>
 <tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
 <td class="table-col-1 h-[72px] px-4 py-2 text-sm text-slate-700 dark:text-slate-300">#12347</td>
@@ -151,7 +148,7 @@
 <td class="table-col-5 h-[72px] px-4 py-2">
 <span class="inline-flex items-center rounded-full bg-yellow-100 dark:bg-yellow-900/50 px-3 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-300">EM TROCA</span>
 </td>
-<td class="table-col-6 h-[72px] px-4 py-2 text-sm font-semibold text-primary hover:underline cursor-pointer">Detalhar</td>
+<td class="table-col-6 h-[72px] px-4 py-2 text-sm font-semibold"><a href="DetalhamentoTroca.html" class="text-primary hover:underline">Detalhar</a></td>
 </tr>
 <tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
 <td class="table-col-1 h-[72px] px-4 py-2 text-sm text-slate-700 dark:text-slate-300">#12348</td>
@@ -161,7 +158,7 @@
 <td class="table-col-5 h-[72px] px-4 py-2">
 <span class="inline-flex items-center rounded-full bg-red-100 dark:bg-red-900/50 px-3 py-1 text-xs font-medium text-red-800 dark:text-red-300">RECUSADA</span>
 </td>
-<td class="table-col-6 h-[72px] px-4 py-2 text-sm font-semibold text-primary hover:underline cursor-pointer">Detalhar</td>
+<td class="table-col-6 h-[72px] px-4 py-2 text-sm font-semibold"><a href="DetalhamentoTroca.html" class="text-primary hover:underline">Detalhar</a></td>
 </tr>
 <tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
 <td class="table-col-1 h-[72px] px-4 py-2 text-sm text-slate-700 dark:text-slate-300">#12349</td>
@@ -171,33 +168,13 @@
 <td class="table-col-5 h-[72px] px-4 py-2">
 <span class="inline-flex items-center rounded-full bg-slate-200 dark:bg-slate-700 px-3 py-1 text-xs font-medium text-slate-800 dark:text-slate-200">FINALIZADA</span>
 </td>
-<td class="table-col-6 h-[72px] px-4 py-2 text-sm font-semibold text-primary hover:underline cursor-pointer">Detalhar</td>
+<td class="table-col-6 h-[72px] px-4 py-2 text-sm font-semibold"><a href="DetalhamentoTroca.html" class="text-primary hover:underline">Detalhar</a></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</div>
-<div class="flex items-center justify-center mt-6">
-<nav class="flex items-center gap-2">
-<a class="flex size-9 items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
-<span class="material-symbols-outlined">chevron_left</span>
-</a>
-<a class="flex size-9 items-center justify-center rounded-lg text-white bg-primary text-sm font-bold" href="#">1</a>
-<a class="flex size-9 items-center justify-center rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm transition-colors" href="#">2</a>
-<a class="flex size-9 items-center justify-center rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm transition-colors" href="#">3</a>
-<a class="flex size-9 items-center justify-center rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm transition-colors" href="#">4</a>
-<a class="flex size-9 items-center justify-center rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm transition-colors" href="#">5</a>
-<a class="flex size-9 items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
-<span class="material-symbols-outlined">chevron_right</span>
-</a>
-</nav>
-</div>
-</div>
-</div>
-</div>
 </main>
-</div>
 </div>
 </body>
 </html>
