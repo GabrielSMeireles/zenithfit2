@@ -1,0 +1,221 @@
+Requisitos Funcionais
+Grupo: Cadastro de Camisas Oversized
+RF0011 - Cadastrar camisa
+O sistema deve manter um cadastro único para camisas oversized, armazenando todas as informações essenciais que permitam sua identificação, comercialização e exibição ao cliente. Cada camisa deve possuir informações completas referentes às suas características físicas e atributos de variação, garantindo consistência e precisão no catálogo.
+RF0012 - Inativar cadastro de camisa
+O sistema deve possibilitar que camisas oversized sejam inativadas. Uma camisa inativada não deve aparecer para o cliente no catálogo, mas deve permanecer registrada para fins administrativos, históricos e de auditoria.
+RF0013 - Inativar camisa de forma automática
+O sistema deve inativar automaticamente camisas oversized que estejam sem estoque e que não possuam vendas dentro de um intervalo mínimo de valor ou quantidade, conforme parâmetro predefinido no sistema. Essa automação visa otimizar o catálogo e priorizar produtos ativos e comercialmente relevantes.
+RF0014 - Alterar cadastro de camisa
+O sistema deve possibilitar a alteração dos dados cadastrais das camisas oversized, permitindo a atualização de informações como variações de tamanho, cor,  descrição, tecido, código de barras, SKU ou outras características essenciais.
+RF0015 - Consulta de camisas
+O sistema deve possibilitar que uma camisa oversized seja consultada com base em um filtro definido pelo usuário. Todos os campos utilizados para identificação da camisa podem ser utilizados como filtro, tanto de forma combinada quanto isolada, incluindo atributos como tamanho, cor, tecido, SKU, código de barras e categoria.
+RF0016 - Ativar cadastro de camisas
+Deve ser possível ativar o cadastro de uma camisa oversized, tornando-a novamente disponível para consulta, gestão e comercialização no sistema.
+
+Grupo: Cadastro de Clientes
+RF0021 - Cadastrar cliente
+O sistema deve possibilitar o cadastro de clientes.
+RF0022 - Alterar cliente
+O sistema deve possibilitar a alteração de dados cadastrais de clientes.
+RF0023 - Inativar cadastro de cliente
+O sistema deve possibilitar que clientes sejam inativados.
+RF0024 - Consulta de clientes
+O sistema deve possibilitar que um cliente seja consultado com base em um filtro definido pelo usuário. Todos os campos utilizados para identificação do cliente podem ser utilizados como filtro, tanto de forma combinada quanto isolada.
+RF0025 - Consulta de transações
+O sistema deve disponibilizar no cadastro de clientes a consulta de todas as transações já realizadas pelo mesmo, incluindo compras de camisas oversized, trocas, cupons utilizados e pagamentos.
+RF0026 - Cadastro de endereços de entrega
+Deve ser possível associar diversos endereços de entrega ao cadastro de um cliente. Cada endereço deve ser identificado com um nome composto de uma frase curta.
+RF0027 - Cadastro de cartões de crédito
+Deve ser possível associar diversos cartões de crédito ao cadastro de um cliente. Deve haver um cartão configurado como preferencial.
+RF0028 - Alteração apenas de senha
+O sistema deve possibilitar que a senha do usuário seja alterada sem a necessidade de edição dos demais dados cadastrais.
+
+Grupo: Gerenciar Vendas Eletrônicas
+RF0031 - Gerenciar carrinho de compra
+O sistema deve permitir que camisas oversized sejam colocadas em um repositório temporário para futura compra (carrinho). Deve ser possível adicionar, alterar e excluir itens, bem como visualizar as variações selecionadas (tamanho, cor, quantidade).
+RF0032 - Definir quantidade de itens no carrinho
+Deve ser possível editar a quantidade de cada camisa oversized ao adicionar o produto ao carrinho. Também deve ser possível editar a quantidade dos itens já adicionados na visualização do carrinho.
+RF0033 - Realizar compra
+Deve ser possível, a partir do carrinho de compra, realizar uma compra de camisas oversized, considerando estoque, métodos de pagamento e endereço de entrega.
+RF0034 - Calcular frete
+O sistema deve calcular o frete da compra com base nas camisas selecionadas, suas dimensões/peso e o endereço de entrega informado.
+RF0035 - Selecionar endereço de entrega
+O cliente pode selecionar qualquer endereço previamente cadastrado ou cadastrar um novo. Caso um novo endereço seja inserido, deve haver opção para incluí-lo no perfil.
+RF0036 - Selecionar forma de pagamento
+O cliente pode selecionar cartões já cadastrados ou registrar um novo. Também pode utilizar cupons promocionais ou cupons de troca válidos.
+O sistema deve permitir combinações entre cartões e cupons para pagamento de camisas oversized.
+RF0037 - Finalizar compra
+A compra deve ser finalizada após a seleção da forma de pagamento e endereço de entrega. Após a finalização, o status deve ser EM PROCESSAMENTO.
+RF0038 - Despachar produtos para entrega
+O sistema deve permitir que um administrador selecione compras aprovadas contendo camisas oversized para envio, alterando o status para EM TRÂNSITO.
+RF0039 - Produtos entregues
+O sistema deve permitir que o administrador confirme a entrega da compra, alterando o status para ENTREGUE.
+RF0040 - Solicitar troca
+O cliente deve poder solicitar a troca de camisas oversized, seja de tamanho, cor ou defeito, através da visualização dos seus pedidos.
+RF0041 - Autorizar trocas
+O administrador deve poder autorizar pedidos de troca com status EM TROCA, passando-os para TROCA AUTORIZADA.
+RF0042 - Visualização de trocas
+O administrador deve conseguir visualizar todos os pedidos de troca ou compras com status EM TROCA.
+RF0043 - Confirmar recebimento de itens para troca
+O administrador deve confirmar o recebimento das camisas devolvidas para troca. Deve informar se os produtos retornam ao estoque; se sim, a entrada deve ser registrada.
+RF0044 - Gerar cupom de troca após recebimento
+O sistema deve gerar um cupom de troca ao confirmar o recebimento das camisas retornadas, disponibilizando-o ao cliente para compras futuras.
+
+Grupo: Controle de Estoque
+RF0051 - Realizar entrada em estoque
+O sistema deve permitir registrar entrada de camisas oversized no estoque. Deve ser informado o produto previamente cadastrado, variação (cor e tamanho) e a quantidade.
+RF0052 - Calcular valor de venda
+O sistema deve calcular o valor de venda com base no valor de custo e no grupo de precificação da camisa oversized, aplicando o percentual de margem configurado.
+RF0053 - Dar baixa em estoque
+Para cada venda realizada, deve-se dar baixa no estoque do total de itens vendidos (considerando tamanho e cor).
+RF0054 - Realizar reentrada em estoque
+O sistema deve realizar a reentrada de camisas oversized a partir de trocas autorizadas, registrando corretamente o retorno ao estoque.
+
+Grupo: Análise
+RF0055 - Analisar histórico de vendas
+O sistema deve possibilitar consultar o histórico de vendas de camisas oversized, permitindo comparar produtos, modelos ou categorias por período, considerando uma data inicial e final.
+
+Requisitos Não Funcionais
+Grupo Geral
+RNF0011 - Tempo de resposta para consultas
+Toda consulta de usuário deve ter resposta em no máximo 1 segundo.
+RNF0012 - Log de transação
+Todas as operações de escrita devem registrar data, hora, usuário responsável e manter os dados alterados para rastreabilidade.
+
+Grupo: Cadastro de Camisas Oversized
+RNF0021 - Código da camisa
+Toda camisa oversized cadastrada deve receber um código único no sistema.
+RNF0013 - Cadastro de domínios
+O sistema deve possuir um script que insira todos os registros de tabelas de domínio, como: marca, tipo de tecido, categoria, fornecedor, grupo de precificação, cores e tamanhos disponíveis.
+
+Grupo: Cadastro de Clientes
+RNF0031
+Senha forte
+A senha cadastrada pelo usuário deve ser composta de pelo menos 8 caracteres, ter letras maiúsculas e minúsculas além de conter caracteres especiais.
+RNF0032
+Confirmação de senha
+O usuário obrigatoriamente deve digitar duas vezes a mesma senha no momento do registro da mesma.
+RNF0033
+Senha criptografada
+A senha deve ser criptografada 
+RF0034
+Alteração apenas de endereços 
+O sistema deve possibilitar que endereços de entrega ou cobrança possam ser alterados ou adicionados de forma simples sem a necessidade da edição dos demais dados cadastrais. 
+RNF0035
+Código de cliente
+Todo cliente cadastrado deve receber um código único no sistema.
+
+
+Grupo: Gerenciar Vendas Eletrônicas
+RNF0042 - Apresentar itens retirados do carrinho
+O sistema deve apresentar na listagem do carrinho as camisas oversized que forem retiradas automaticamente por expiração do prazo de bloqueio. Deve indicar o tempo e desabilitar a compra para esses itens, requerendo nova adição.
+
+Grupo: Análise
+RNF0043 - Gráfico de linhas
+O sistema deve apresentar o histórico de vendas de camisas oversized em um gráfico de linhas.
+
+Grupo: Recomendação Personalizada
+RNF0044 - Recomendação com IA Generativa
+O sistema deve integrar IA generativa para oferecer recomendações personalizadas de camisas oversized com base no histórico e preferências do cliente.
+A IA deve permitir interação via chatbot para auxiliar na busca, esclarecer dúvidas e sugerir produtos relacionados.
+O modelo deve ser treinado com dados de vendas, interações e feedback dos clientes para manter recomendações atualizadas.
+
+Regras de Negócio (Totalmente Adaptadas)
+Grupo: Cadastro de Camisas Oversized
+RN0011 - Dados obrigatórios para cadastro de uma camisa
+Para toda camisa oversized cadastrada é obrigatório fornecer: marca, modelo, categoria, coleção/ano, descrição, tecido, cor, tamanhos disponíveis, medidas (largura, comprimento, peso), grupo de precificação, código de barras e SKU.
+RN0012 - Associação com categorias
+Uma camisa oversized pode estar associada a mais de uma categoria (ex.: streetwear, casual, básica, premium).
+RN0013 - Definindo valor de venda
+Toda camisa cadastrada deve ser associada a um grupo de precificação, onde o valor terá como base a margem de lucro parametrizada.
+RN0014 - Validar margem de lucro
+Uma camisa oversized somente pode ter seu valor alterado se estiver dentro da margem do grupo de precificação. Reduções abaixo da margem exigem autorização de um gerente.
+RN0015 - Associar motivo de inativação
+Toda camisa inativada manualmente deve ter justificativa e categoria de inativação.
+RN0016 - Associar motivo de inativação automática
+Toda camisa oversized inativada automaticamente deve ser categorizada como FORA DE LINHA.
+RN0017 - Associar motivo de ativação
+Toda camisa ativada deve registrar justificativa e categoria de ativação.
+
+Grupo: Cadastro de Clientes
+RN0021
+Cadastro de endereço de cobrança
+Para todo cliente cadastrado é obrigatório o registro de ao menos um endereço de cobrança. 
+RN0022
+Cadastro de endereço de entrega
+Para todo cliente cadastrado é obrigatório o registro de ao menos um endereço de entrega. 
+RN0023
+Composição do registro de endereços
+Todo cadastro de endereços associados a clientes deve ser composto dos seguintes dados: Tipo de residência (Casa, Apartamento, etc), Tipo Logradouro, Logradouro, Número, Bairro, CEP, Cidade, Estado e País. Todos os campos anteriores são de preenchimento obrigatório. Opcionalmente pode ser preenchido um campo observações.
+RN0024
+Composição do registro de cartões de crédito
+Todo cartão de crédito associado a um cliente deverá ser composto pelos seguintes campos: Nº do Cartão, Nome impresso no Cartão, Bandeira do Cartão e Código de Segurança.
+RN0025
+Bandeiras permitidas para registro de cartões de crédito
+Todo cartão de crédito associado a um cliente deverá ser de alguma bandeira registrada no sistema.
+RN0026
+Dados obrigatórios para o cadastro de um cliente
+Para todo cliente cadastrado é obrigatório o cadastro dos seguintes dados: Gênero, Nome, Data de Nascimento, CPF, Telefone (deve ser composto pelo tipo, DDD e número), e-mail, senha, endereço residencial.
+RN0027
+Ranking de cliente
+O cliente deve receber um raking numérico com base no seu perfil de compra
+RN0028
+Validar retorno da operadora de cartão de credito
+Somente deve-se dar baixa no estoque de itens cuja a compra tenha sido efetivada, isso significa que o status não é mais EM PROCESSAMENTO. Todo item que faça parte de uma compra não aprovada deve ser desbloqueado e mantido em estoque.
+
+Grupo: Gerenciar Vendas Eletrônicas
+RN0031 - Validar estoque para adição de itens
+Não deve ser permitido adicionar ao carrinho camisas oversized que não estejam disponíveis em estoque na variação selecionada (cor e tamanho). A quantidade também deve ser validada.
+RN0032 - Validar estoque para compra
+Caso o estoque seja alterado antes da finalização da compra, o sistema deve notificar o usuário, ajustar automaticamente a quantidade ou remover itens indisponíveis.
+RN0033 - Uso de cupom promocional
+Apenas um cupom promocional pode ser usado por compra.
+RN0034 - Pagamento com vários cartões
+A compra pode ser paga com múltiplos cartões, respeitando valor mínimo de R$10,00 por cartão.
+RN0035 - Uso de cupons junto ao cartão
+Ao combinar cupons com cartão, deve-se priorizar o uso máximo dos cupons. Somente nesse caso valores menores que R$10,00 podem ser cobrados no cartão.
+RN0036 - Gerar cupom de troca
+Se o valor dos cupons exceder o valor total da compra, o sistema deve gerar um novo cupom com a diferença, sem permitir uso excessivo de cupons desnecessários.
+RN0037 - Validar forma de pagamento
+Após finalizar o pedido, o sistema deve validar cupons e aprovação dos cartões pela operadora.
+RN0038 - Alterar status da compra após aprovação
+Se validada, a compra passa a APROVADA; caso contrário, REPROVADA.
+RN0039 - Alterar status para transporte
+Compras selecionadas pelo administrador devem mudar para EM TRANSPORTE.
+RN0040 - Alterar status após entrega
+Após entrega confirmada, o status deve ser ENTREGUE.
+RN0041 - Gerar pedido de troca
+Itens de camisas oversized solicitados para troca devem gerar pedido com status EM TROCA.
+RN0042 - Alterar status após recebimento da troca
+Ao confirmar recebimento, o status deve ser TROCADO.
+RN0043 - Validação para solicitar troca
+Somente itens de pedidos com status ENTREGUE podem ser trocados.
+RN0044 - Bloqueio de produtos
+Ao adicionar camisas oversized ao carrinho, elas devem ser temporariamente bloqueadas para evitar compras paralelas. O sistema gerencia o tempo de bloqueio, notificações e desbloqueio conforme parâmetros.
+RNF0045 - Retirar item do carrinho
+Quando um item for desbloqueado, todos os itens da mesma camiseta que geraram o bloqueio devem ser removidos do carrinho.
+RNF0046 - Gerar notificação de autorização de troca
+Ao autorizar uma troca, o sistema deve notificar o cliente.
+
+Grupo: Controle de Estoque
+RN0051 - Validar dados de estoque
+Para cada entrada de camisas oversized, devem ser informados: produto, quantidade, valor de custo, fornecedor e data de entrada.
+RN005x - Valor de item com diferentes custos
+Quando camisas de mesmo modelo chegarem com custos diferentes, o valor de venda deve ser calculado com base no maior custo.
+RN0061 - Quantidade mínima
+Não deve ser permitido entrada de estoque com quantidade igual a zero.
+RN0062 - Valor de custo
+Toda camisa deve possuir valor de custo informado.
+RNF0064 - Data de entrada
+Nenhuma entrada deve ser registrada sem data.
+
+RN0065 - Limite de Itens por Carrinho
+O sistema deve estabelecer um limite máximo de 50 unidades de uma mesma variação (cor e tamanho) de camisa oversized por carrinho de compra. Esta regra visa prevenir erros de digitação e garantir a estabilidade do cálculo de frete. Caso o usuário tente exceder esse valor, o sistema deve emitir um alerta e manter a quantidade máxima permitida.
+
+RN0066 - Expiração de Cupom de Troca
+Todo cupom de troca gerado a partir de uma devolução confirmada terá validade de 365 dias a partir da data de sua emissão. Após esse período, o cupom será automaticamente considerado expirado pelo sistema e não poderá mais ser selecionado ou aplicado como forma de pagamento em novas compras.
+
+RN0067 - Validação de Idade Mínima para Cadastro
+Para a efetivação do cadastro de um cliente, a data de nascimento informada deve ser validada para garantir que o usuário possua idade igual ou superior a 18 anos no momento do registro. Caso a idade mínima não seja atingida, o sistema deve impedir a conclusão do cadastro para assegurar a conformidade com as políticas de transações comerciais.
+
