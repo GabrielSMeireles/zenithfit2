@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Novidades - Lançamentos | Zenith Fit</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#111827",
+                        "background-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .product-card-img { aspect-ratio: 1 / 1.1; }
+    </style>
+</head>
+
+<body class="bg-background-light text-slate-900 transition-colors duration-200">
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="homepage.html" class="flex items-center flex-shrink-0">
+                    <img alt="Zenith Logo" class="h-12" src="images/logo-zenith.png" />
+                </a>
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a class="hover:text-primary transition-colors" href="homepage.html">Home</a>
+                    <a class="hover:text-primary flex items-center gap-1 transition-colors" href="produtos.html">Shop <span class="material-symbols-outlined text-sm">expand_more</span></a>
+                    <a class="hover:text-primary transition-colors" href="novidades.html">Novidades</a>
+                    <a class="hover:text-primary transition-colors" href="assistente.html">Assistente</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="dashboardCliente.html" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                        <span class="material-symbols-outlined">account_circle</span>
+                    </a>
+                    <a href="carrinho.html" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-3xl lg:text-4xl font-black">Novidades — Lançamentos</h1>
+            <p class="text-slate-600 mt-2">Confira as principais chegadas da semana.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a href="detalhesProduto.html" class="group block">
+                <div class="product-card-img bg-[#c9d6e1] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                    <img alt="Lançamento Kokushibo" class="w-full h-full object-contain" src="images/kokushibo.png" />
+                </div>
+                <h3 class="font-medium text-slate-900">Lançamento: Camisa Kokushibo</h3>
+                <p class="font-bold text-lg mt-2">R$129,99</p>
+            </a>
+
+            <a href="detalhesProduto.html" class="group block">
+                <div class="product-card-img bg-[#dbe2e8] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                    <img alt="Lançamento Symbol" class="w-full h-full object-contain" src="images/symbol.png" />
+                </div>
+                <h3 class="font-medium text-slate-900">Lançamento: Camisa Symbol</h3>
+                <p class="font-bold text-lg mt-2">R$129,99</p>
+            </a>
+
+            <a href="detalhesProduto.html" class="group block">
+                <div class="product-card-img bg-[#c9d6e1] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                    <img alt="Lançamento Akasa" class="w-full h-full object-contain" src="images/akasa.png" />
+                </div>
+                <h3 class="font-medium text-slate-900">Lançamento: Camisa Akasa</h3>
+                <p class="font-bold text-lg mt-2">R$129,99</p>
+            </a>
+
+            <a href="detalhesProduto.html" class="group block">
+                <div class="product-card-img bg-[#dbe2e8] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                    <img alt="Lançamento Mahoraga" class="w-full h-full object-contain" src="images/mahoraga.png" />
+                </div>
+                <h3 class="font-medium text-slate-900">Lançamento: Camisa Mahoraga</h3>
+                <p class="font-bold text-lg mt-2">R$129,99</p>
+            </a>
+
+            <a href="detalhesProduto.html" class="group block">
+                <div class="product-card-img bg-[#c9d6e1] rounded-lg overflow-hidden mb-4 relative flex items-center justify-center p-8 transition-transform duration-300 group-hover:-translate-y-1">
+                    <img alt="Lançamento Toji" class="w-full h-full object-contain" src="images/toji.png" />
+                </div>
+                <h3 class="font-medium text-slate-900">Lançamento: Camisa Toji</h3>
+                <p class="font-bold text-lg mt-2">R$129,99</p>
+            </a>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="produtos.html" class="inline-block px-6 py-3 border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">Ver todos os produtos</a>
+        </div>
+    </main>
+
+    <footer class="bg-slate-50 mt-20 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <div class="lg:col-span-1">
+                    <div class="font-black text-3xl tracking-tighter mb-6">
+                        <span class="text-primary">ZENITH</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed max-w-xs">
+                        Performance, estilo e conforto em um só lugar. Tudo para elevar o seu treino com camisetas oversized projetadas para máxima liberdade, respirabilidade e durabilidade.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-6 uppercase tracking-wider">Companhia</h4>
+                    <ul class="space-y-4 text-xs text-slate-600 font-medium">
+                        <li><a class="hover:text-primary" href="#">Sobre Nós</a></li>
+                        <li><a class="hover:text-primary" href="#">Como Funciona</a></li>
+                        <li><a class="hover:text-primary" href="#">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-6 uppercase tracking-wider">Ajuda</h4>
+                    <ul class="space-y-4 text-xs text-slate-600 font-medium">
+                        <li><a class="hover:text-primary" href="#">Suporte ao Cliente</a></li>
+                        <li><a class="hover:text-primary" href="#">Informações de Entrega</a></li>
+                        <li><a class="hover:text-primary" href="#">Termos e Condições</a></li>
+                        <li><a class="hover:text-primary" href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-6 uppercase tracking-wider">FAQ</h4>
+                    <ul class="space-y-4 text-xs text-slate-600 font-medium">
+                        <li><a class="hover:text-primary" href="#">Minha Conta</a></li>
+                        <li><a class="hover:text-primary" href="#">Acompanhamento de Pedidos</a></li>
+                        <li><a class="hover:text-primary" href="#">Trocas e Devoluções</a></li>
+                        <li><a class="hover:text-primary" href="#">Pagamentos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-6 uppercase tracking-wider">Recursos</h4>
+                    <ul class="space-y-4 text-xs text-slate-600 font-medium">
+                        <li><a class="hover:text-primary" href="#">Guias de Treino</a></li>
+                        <li><a class="hover:text-primary" href="#">Dicas de Suplementação</a></li>
+                        <li><a class="hover:text-primary" href="#">Blog Zenith</a></li>
+                        <li><a class="hover:text-primary" href="#">Aulas &amp; Conteúdos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] text-slate-400 font-medium uppercase tracking-widest">
+                    Zenith © 2025, Todos os Direitos Reservados
+                </p>
+                <div class="flex items-center gap-4 opacity-70 grayscale hover:grayscale-0 transition-all">
+                    <div class="w-10 h-6 bg-slate-200 rounded flex items-center justify-center font-bold text-[8px]">VISA</div>
+                    <div class="w-10 h-6 bg-slate-200 rounded flex items-center justify-center font-bold text-[8px]">MC</div>
+                    <div class="w-10 h-6 bg-slate-200 rounded flex items-center justify-center font-bold text-[8px]">PIX</div>
+                    <div class="w-10 h-6 bg-slate-200 rounded flex items-center justify-center font-bold text-[8px]">APPLE</div>
+                    <div class="w-10 h-6 bg-slate-200 rounded flex items-center justify-center font-bold text-[8px]">GPAY</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

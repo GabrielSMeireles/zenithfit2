@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+   <head>
+      <meta charset="utf-8"/>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+      <title>Zenith Recomenda | Seu Assistente Inteligente</title>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+      <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+      <script>
+         tailwind.config = {
+             darkMode: "class",
+             theme: {
+                 extend: {
+                     colors: {
+                         primary: "#000000",
+                         "background-light": "#FFFFFF",
+                         "background-dark": "#0a0a0a",
+                         "card-bg": "#cbd5e1",
+                     },
+                     fontFamily: {
+                         display: ["Inter", "sans-serif"],
+                     },
+                     borderRadius: {
+                         DEFAULT: "0.5rem",
+                     },
+                 },
+             },
+         };
+      </script>
+      <style type="text/tailwindcss">
+         body { font-family: 'Inter', sans-serif; }
+         .product-card-bg {
+         background-color: #f1f5f9;
+         }
+         .chat-container {
+         height: calc(100vh - 64px);
+         }
+         ::-webkit-scrollbar {
+         width: 6px;
+         }
+         ::-webkit-scrollbar-track {
+         background: transparent;
+         }
+         ::-webkit-scrollbar-thumb {
+         background: #e2e8f0;
+         border-radius: 10px;
+         }
+         .dark ::-webkit-scrollbar-thumb {
+         background: #334155;
+         }
+      </style>
+   </head>
+   <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 overflow-hidden">
+      <header class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+               <a href="homepage.html" class="flex items-center flex-shrink-0">
+                  <img alt="Zenith Logo" class="h-12" src="images/logo-zenith.png" />
+               </a>
+               <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                  <a class="hover:text-primary transition-colors" href="homepage.html">Home</a>
+                  <a class="hover:text-primary flex items-center gap-1 transition-colors" href="produtos.html">Shop <span class="material-symbols-outlined text-sm">expand_more</span></a>
+                  <a class="hover:text-primary transition-colors" href="produtos.html">Novidades</a>
+                  <a class="hover:text-primary transition-colors" href="assistente.html">Assistente</a>
+               </nav>
+               <div class="flex items-center space-x-4">
+                  <a href="dashboardCliente.html" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                     <span class="material-symbols-outlined">account_circle</span>
+                  </a>
+                  <a href="carrinho.html" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                     <span class="material-symbols-outlined">shopping_cart</span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </header>
+      <main class="chat-container flex flex-col relative max-w-4xl mx-auto w-full">
+         <div class="flex-1 overflow-y-auto px-4 py-8 space-y-8">
+            <div class="flex gap-4 max-w-3xl">
+               <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined text-sm">smart_toy</span>
+               </div>
+               <div class="space-y-2">
+                  <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">Zenith Recomenda</p>
+                  <div class="bg-slate-100 dark:bg-slate-900 rounded-2xl p-4 text-slate-800 dark:text-slate-200">
+                     Olá! Eu sou o Zenith Recomenda, seu assistente inteligente. Estou aqui para te ajudar a encontrar o produto perfeito para o seu estilo e necessidade. Como posso te ajudar hoje?
+                  </div>
+               </div>
+            </div>
+            <div class="flex gap-4 max-w-3xl ml-auto flex-row-reverse">
+               <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined text-sm">person</span>
+               </div>
+               <div class="space-y-2 text-right">
+                  <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">Você</p>
+                  <div class="bg-black text-white rounded-2xl p-4 inline-block text-left">
+                     Quero uma camiseta para usar à noite
+                  </div>
+               </div>
+            </div>
+            <div class="flex gap-4 max-w-4xl">
+               <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined text-sm">smart_toy</span>
+               </div>
+               <div class="space-y-4 w-full">
+                  <div class="space-y-2">
+                     <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">Zenith Recomenda</p>
+                     <div class="bg-slate-100 dark:bg-slate-900 rounded-2xl p-4 text-slate-800 dark:text-slate-200">
+                        Excelente escolha! Para ocasiões noturnas, camisetas pretas são versáteis e elegantes. Aqui estão três recomendações do nosso estoque:
+                     </div>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden group cursor-pointer transition-shadow hover:shadow-lg">
+                        <div class="aspect-square bg-slate-100 dark:bg-slate-800 flex items-center justify-center p-4">
+                           <img alt="Camisa oversized Kokushibo" class="w-full h-full object-contain" src="images/kokushibo.png"/>
+                        </div>
+                        <div class="p-4">
+                           <h3 class="font-bold text-sm mb-1 truncate">Camisa oversized Kokushibo</h3>
+                           <p class="font-black text-primary dark:text-white">R$129,99</p>
+                        </div>
+                     </div>
+                     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden group cursor-pointer transition-shadow hover:shadow-lg">
+                        <div class="aspect-square bg-slate-100 dark:bg-slate-800 flex items-center justify-center p-4">
+                           <img alt="Camisa oversized Toji" class="w-full h-full object-contain" src="images/toji.png"/>
+                        </div>
+                        <div class="p-4">
+                           <h3 class="font-bold text-sm mb-1 truncate">Camisa oversized Toji</h3>
+                           <p class="font-black text-primary dark:text-white">R$129,99</p>
+                        </div>
+                     </div>
+                     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden group cursor-pointer transition-shadow hover:shadow-lg">
+                        <div class="aspect-square bg-slate-100 dark:bg-slate-800 flex items-center justify-center p-4">
+                           <img alt="Camisa oversized Symbol" class="w-full h-full object-contain" src="images/symbol.png"/>
+                        </div>
+                        <div class="p-4">
+                           <h3 class="font-bold text-sm mb-1 truncate">Camisa oversized Symbol</h3>
+                           <p class="font-black text-primary dark:text-white">R$129,99</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="p-4 md:p-8 bg-gradient-to-t from-white via-white/90 to-transparent dark:from-background-dark dark:via-background-dark/90 absolute bottom-0 left-0 right-0">
+            <div class="relative max-w-3xl mx-auto">
+               <input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-2xl py-4 pl-6 pr-14 text-base focus:ring-2 focus:ring-black dark:focus:ring-white transition-all shadow-sm" placeholder="Digite sua mensagem aqui..." type="text"/>
+               <button class="absolute right-2 top-2 p-2 bg-black text-white rounded-xl hover:scale-105 transition-transform">
+               <span class="material-symbols-outlined">arrow_upward</span>
+               </button>
+            </div>
+            <p class="text-[10px] text-center text-slate-400 mt-3 font-medium uppercase tracking-widest">IA Treinada pela Zenith Fit para recomendações de estilo</p>
+         </div>
+      </main>
+   </body>
+</html>
