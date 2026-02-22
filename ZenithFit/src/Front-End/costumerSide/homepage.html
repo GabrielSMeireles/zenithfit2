@@ -35,20 +35,18 @@
 </head>
 
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-200">
-    <nav class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="homepage.html" class="font-bold tracking-wider dark:text-gray-100 hover:opacity-80 transition-opacity">
-                        <img alt="Zenith Logo" class="h-14" src="images/logo-zenith.png" />
-                    </a>
-                </div>
-                <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
+            <div class="flex items-center justify-between h-16">
+                <a href="homepage.html" class="flex items-center flex-shrink-0">
+                    <img alt="Zenith Logo" class="h-12" src="images/logo-zenith.png" />
+                </a>
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
                     <a class="hover:text-primary flex items-center gap-1 transition-colors" href="produtos.html">Shop <span class="material-symbols-outlined text-sm">expand_more</span></a>
                     <a class="hover:text-primary transition-colors" href="#">Promoções</a>
                     <a class="hover:text-primary transition-colors" href="#">Novidades</a>
                     <a class="hover:text-primary transition-colors" href="#">Marcas</a>
-                </div>
+                </nav>
                 <div class="flex items-center space-x-4">
                     <a href="dashboardCliente.html" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
                         <span class="material-symbols-outlined">account_circle</span>
@@ -59,7 +57,7 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
     <header class="relative bg-slate-100 dark:bg-slate-900 overflow-hidden pt-12 lg:pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
