@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Detalhe da Camisa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script>
         tailwind.config = {
@@ -28,32 +28,32 @@
             },
         };
     </script>
-    <style>
-        .material-icons-outlined {
-            font-size: inherit;
-        }
+    <style type="text/tailwindcss">
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     </style>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-zinc-800 dark:text-zinc-200">
-    <header class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 sticky top-0 z-50">
-        <div class="container mx-auto px-4 h-16 flex justify-between items-center">
-            <a href="homepage.html" class="text-2xl font-bold font-display tracking-wider text-primary dark:text-gray-100 hover:opacity-80 transition-opacity">
-                <img alt="Zenith Logo" class="h-14" src="images/logo-zenith.png" />
-            </a>
-            <div class="hidden md:flex items-center space-x-6 text-sm font-semibold">
-                <a class="hover:text-gray-500 dark:hover:text-gray-400 transition-colors" href="produtos.html">Shop</a>
-                <a class="hover:text-gray-500 dark:hover:text-gray-400 transition-colors" href="#">Promoções</a>
-                <a class="hover:text-gray-500 dark:hover:text-gray-400 transition-colors" href="#">Novidades</a>
-                <a class="hover:text-gray-500 dark:hover:text-gray-400 transition-colors" href="#">Marcas</a>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="dashboardCliente.html" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
-                    <span class="material-icons-outlined text-gray-500 dark:text-gray-400">person_outline</span>
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800" style="font-family: 'Inter', sans-serif;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="homepage.html" class="flex items-center flex-shrink-0">
+                    <img alt="Zenith Logo" class="h-12" src="images/logo-zenith.png" />
                 </a>
-                <a href="carrinho.html" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
-                    <span class="material-icons-outlined text-gray-500 dark:text-gray-400">shopping_cart_outline</span>
-                </a>
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a class="hover:text-primary transition-colors" href="homepage.html">Home</a>
+                    <a class="hover:text-primary flex items-center gap-1 transition-colors" href="produtos.html">Shop <span class="material-symbols-outlined text-sm">expand_more</span></a>
+                    <a class="hover:text-primary transition-colors" href="produtos.html">Novidades</a>
+                    <a class="hover:text-primary transition-colors" href="assistente.html">Assistente</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="perfil.html" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                        <span class="material-symbols-outlined">account_circle</span>
+                    </a>
+                    <a href="carrinho.html" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
