@@ -137,7 +137,7 @@
 </td>
 <td class="whitespace-nowrap px-6 py-4">
 <div class="flex items-center gap-4">
-<button class="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary">
+<button onclick="openPersonalDataModal()" class="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary">
 <span class="material-symbols-outlined text-base">edit</span>
                                                 Editar
                                             </button>
@@ -160,7 +160,7 @@
 </td>
 <td class="whitespace-nowrap px-6 py-4">
 <div class="flex items-center gap-4">
-<button class="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary">
+<button onclick="openPersonalDataModal()" class="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary">
 <span class="material-symbols-outlined text-base">edit</span>
                                                 Editar
                                             </button>
@@ -183,7 +183,7 @@
 </td>
 <td class="whitespace-nowrap px-6 py-4">
 <div class="flex items-center gap-4">
-<button class="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary">
+<button onclick="openPersonalDataModal()" class="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary">
 <span class="material-symbols-outlined text-base">edit</span>
                                                 Editar
                                             </button>
@@ -206,7 +206,7 @@
 </td>
 <td class="whitespace-nowrap px-6 py-4">
 <div class="flex items-center gap-4">
-<button class="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary">
+<button onclick="openPersonalDataModal()" class="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary">
 <span class="material-symbols-outlined text-base">edit</span>
                                                 Editar
                                             </button>
@@ -258,6 +258,115 @@
 </div>
 </main>
 </div>
-</div>
 
-</body></html>
+    <!-- Modal Alteração de Dados Pessoais -->
+    <div id="personalDataModal" class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-xl shadow-lg w-full max-w-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-gray-100">Alteração de Dados Pessoais</h2>
+                <button onclick="closeModal('personalDataModal')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <form>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nome Completo</label>
+                        <input class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2" type="text" value="João da Silva" />
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Data de Nascimento</label>
+                            <input class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2" type="date" value="1990-01-01" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">CPF</label>
+                            <input class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2" type="text" placeholder="000.000.000-00" value="123.456.789-00" />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Gênero</label>
+                        <select class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2">
+                            <option>Feminino</option>
+                            <option selected>Masculino</option>
+                            <option>Não informar</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+                    <fieldset>
+                        <legend class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Telefone</legend>
+                        <div class="grid grid-cols-1 sm:grid-cols-12 gap-x-4 gap-y-4">
+                            <div class="sm:col-span-4">
+                                <select class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 px-3 py-2">
+                                    <option>Celular</option>
+                                    <option>Residencial</option>
+                                    <option>Comercial</option>
+                                </select>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <input class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 text-center px-3 py-2" placeholder="DDD" type="text" value="11" />
+                            </div>
+                            <div class="sm:col-span-6">
+                                <input class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2" placeholder="00000-0000" type="tel" value="99999-9999" />
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Endereço Residencial</legend>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">CEP</label>
+                                <input class="w-full sm:w-1/2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2" placeholder="00000-000" type="text" value="01234-567" />
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-x-4 gap-y-4">
+                                <div class="sm:col-span-9">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Rua</label>
+                                    <input class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2" type="text" value="Rua das Flores" />
+                                </div>
+                                <div class="sm:col-span-3">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Número</label>
+                                    <input class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2" type="text" value="123" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Bairro</label>
+                                <input class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2" type="text" value="Centro" />
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-x-4 gap-y-4">
+                                <div class="sm:col-span-8">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Cidade</label>
+                                    <input class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2" type="text" value="São Paulo" />
+                                </div>
+                                <div class="sm:col-span-4">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Estado</label>
+                                    <input class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 px-3 py-2" type="text" value="SP" />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700 space-y-4">
+                    <div class="flex flex-col sm:flex-row-reverse gap-4">
+                        <button onclick="closeModal('personalDataModal')" class="w-full sm:w-auto inline-flex justify-center rounded-md border border-transparent shadow-sm px-6 py-3 bg-primary text-base font-medium text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark transition-colors">
+                            Salvar
+                        </button>
+                        <button onclick="closeModal('personalDataModal')" class="w-full sm:w-auto inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-6 py-3 bg-white dark:bg-gray-800 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark transition-colors">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+      function openPersonalDataModal() {
+        document.getElementById('personalDataModal').classList.remove('hidden');
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+      }
+    </script>
+</body>
+</html>
